@@ -2,9 +2,10 @@ import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { ExternalLink, Github, Mail, Twitter } from "lucide-react"
-import Image from "next/image"
 import Link from "next/link"
+import Image from "next/image"
 import { ThemeToggle } from "@/components/theme-toggle"
+import { ProfileImage } from "@/components/custom/ProfileImage"
 
 const projects = [
   {
@@ -168,25 +169,18 @@ export default function Portfolio() {
         <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-secondary/5 dark:from-primary/10 dark:to-secondary/10" />
         <div className="container relative">
           <div className="mx-auto max-w-4xl text-center">
-            <div className="mb-8">
-              <div className="relative mx-auto h-32 w-32 md:h-40 md:w-40 rounded-full overflow-hidden border-4 border-primary/20 shadow-lg dark:shadow-primary/10">
-                <Image src="/placeholder.svg?height=160&width=160" alt="Profile" fill className="object-cover" />
-              </div>
-            </div>
+            <ProfileImage />
             <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold tracking-tight mb-6 text-foreground">
               Desarrollador
               <span className="block text-primary">Full Stack</span>
             </h1>
             <p className="text-lg md:text-xl text-muted-foreground mb-8 max-w-2xl mx-auto">
               Creo experiencias web modernas y funcionales. Especializado en React, Next.js y TypeScript para construir
-              aplicaciones que marcan la diferencia.
+              aplicaciones que me permiten demostrar mis habilidades.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button size="lg" asChild className="shadow-lg hover:shadow-xl transition-shadow">
-                <Link href="#projects">Ver Proyectos</Link>
-              </Button>
-              <Button variant="outline" size="lg" asChild className="border-border hover:bg-muted">
-                <Link href="#contact">Contactar</Link>
+                <Link href="#projects">Ver Proyectos Personales</Link>
               </Button>
             </div>
           </div>

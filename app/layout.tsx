@@ -9,7 +9,6 @@ const inter = Inter({ subsets: ["latin"] })
 export const metadata: Metadata = {
   title: "Carlos Freire - Portfolio",
   description: "Desarrollador Full Stack especializado en React, Next.js y TypeScript",
-    generator: 'v0.dev'
 }
 
 export default function RootLayout({
