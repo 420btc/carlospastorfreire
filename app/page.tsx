@@ -125,11 +125,13 @@ export default function Portfolio() {
     <div className="min-h-screen bg-background text-foreground">
       {/* Header */}
       <header className="sticky top-0 z-50 w-full border-b border-border bg-background/80 backdrop-blur-md supports-[backdrop-filter]:bg-background/60">
-        <div className="container flex h-16 items-center justify-between">
-          <Link href="/" className="text-4xl font-bold text-foreground hover:text-primary transition-colors">
-            Carlos Pastor Freire
-          </Link>
-          <nav className="hidden md:flex items-center space-x-6">
+        <div className="container flex h-16 items-center">
+          <div className="flex-1">
+            <Link href="/" className="text-4xl font-bold text-foreground hover:text-primary transition-colors">
+              Carlos Pastor Freire
+            </Link>
+          </div>
+          <nav className="hidden md:flex items-center space-x-12 absolute left-1/2 transform -translate-x-1/2">
             <Link
               href="#projects"
               className="text-sm font-medium text-muted-foreground hover:text-primary transition-colors"
@@ -142,24 +144,20 @@ export default function Portfolio() {
             >
               Sobre mí
             </Link>
-            <Link
-              href="#contact"
-              className="text-sm font-medium text-muted-foreground hover:text-primary transition-colors"
-            >
-              Contacto
-            </Link>
           </nav>
-          <div className="flex items-center space-x-2">
-            <Button variant="ghost" size="icon" className="text-muted-foreground hover:text-foreground">
-              <Github className="h-4 w-4" />
-            </Button>
-            <Button variant="ghost" size="icon" className="text-muted-foreground hover:text-foreground">
-              <Twitter className="h-4 w-4" />
-            </Button>
-            <Button variant="ghost" size="icon" className="text-muted-foreground hover:text-foreground">
-              <Mail className="h-4 w-4" />
-            </Button>
-            <ThemeToggle />
+          <div className="flex-1 flex justify-end">
+            <div className="flex items-center space-x-2">
+              <Button variant="ghost" size="icon" className="text-muted-foreground hover:text-foreground">
+                <Github className="h-4 w-4" />
+              </Button>
+              <Button variant="ghost" size="icon" className="text-muted-foreground hover:text-foreground">
+                <Twitter className="h-4 w-4" />
+              </Button>
+              <Button variant="ghost" size="icon" className="text-muted-foreground hover:text-foreground">
+                <Mail className="h-4 w-4" />
+              </Button>
+              <ThemeToggle />
+            </div>
           </div>
         </div>
       </header>
