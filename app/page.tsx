@@ -1,122 +1,142 @@
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
-import { ExternalLink, Github, Mail, Twitter } from "lucide-react"
+import { ExternalLink, Github, Mail, Subtitles, Twitter } from "lucide-react"
 import Link from "next/link"
 import Image from "next/image"
 import { ThemeToggle } from "@/components/theme-toggle"
 import { ProfileImage } from "@/components/custom/ProfileImage"
 
-const projects = [
+interface ProjectType {
+  id: number
+  title: string
+  subtitle?: string  // Nuevo campo opcional para el subtítulo
+  description: string
+  image: string
+  date: string
+  link: string
+  github: string
+  tags: string[]
+}
+
+const projects: ProjectType[] = [
   {
     id: 1,
-    title: "E-commerce Dashboard",
+    title: "Candlerush 1",
+    subtitle: "btcer.fun",
     description:
-      "Una plataforma completa de comercio electrónico con panel de administración, gestión de inventario y analytics en tiempo real.",
+      "Una plataforma de juego y simulación de trading de criptomonedas en una versión temprana con datos en tiempo real y apuestas ficticias basadas en las velas japonesas y las temporalidades, con resolución automática.",
     image: "/placeholder.svg?height=300&width=500",
-    date: "13 de Marzo 2024",
-    link: "https://ecommerce-demo.com",
-    github: "https://github.com/usuario/ecommerce",
-    tags: ["Next.js", "TypeScript", "Stripe", "Prisma"],
+    date: "13 de Marzo 2025",
+    link: "https://btcer.fun",
+    github: "https://github.com/420btc/cndle",
+    tags: ["React Native", "TypeScript", "JavaScript"],
   },
   {
     id: 2,
-    title: "Task Management App",
+    title: "MeteoMálaga",
+    subtitle: "meteomalaga.fun",
     description:
-      "Aplicación de gestión de tareas con colaboración en tiempo real, notificaciones push y sincronización offline.",
+      "Aplicación de apuestas sobre pronósticos meteorológicos para Málaga con datos en tiempo real, análisis de predicciones y estadísticas. Apuestas con resolución automática en el momento del pronóstico. ",
     image: "/placeholder.svg?height=300&width=500",
-    date: "Febrero 2024",
-    link: "https://taskapp-demo.com",
-    github: "https://github.com/usuario/taskapp",
-    tags: ["React", "Node.js", "Socket.io", "MongoDB"],
+    date: "20 de Marzo 2025",
+    link: "https://meteomalaga.fun",
+    github: "https://github.com/420btc/meteomalaga",
+    tags: ["React Native", "JavaScript", "TypeScript", "Supabase"],
   },
   {
     id: 3,
-    title: "Weather Analytics Platform",
+    title: "Carlos Freire FPV",
+    subtitle: "carlosfpv.es",
     description:
-      "Plataforma de análisis meteorológico con visualizaciones interactivas, predicciones ML y API personalizada.",
+      "Mi propia web personal para la venta de servicios de grabación con drones FPV en la Costa del Sol. Secciones de contacto, meteorología, servicios y proyectos.",
     image: "/placeholder.svg?height=300&width=500",
-    date: "Enero 2024",
-    link: "https://weather-analytics.com",
-    github: "https://github.com/usuario/weather",
-    tags: ["Vue.js", "Python", "D3.js", "FastAPI"],
+    date: "7 de Abril 2025",
+    link: "https://carlosfpv.es",
+    github: "https://github.com/420btc/freirefpv",
+    tags: ["Vue.js", "Python", "HTML", "EmailJS"],
   },
   {
     id: 4,
-    title: "Social Media Dashboard",
+    title: "Horizon Creative",
+    subtitle: "horizoncreative.es",
     description:
-      "Dashboard para gestión de redes sociales con programación de posts, analytics y gestión de múltiples cuentas.",
+      "Horizon Creative es una página web de portafolio profesional para agencias creativas, freelancers y estudios de diseño. Permite mostrar proyectos, servicios, equipo y datos de contacto.",
     image: "/placeholder.svg?height=300&width=500",
-    date: "Diciembre 2023",
-    link: "https://social-dashboard.com",
-    github: "https://github.com/usuario/social",
-    tags: ["React", "Express", "Redis", "PostgreSQL"],
+    date: "25 de Abril 2025",
+    link: "https://horizoncreative.es",
+    github: "https://github.com/420btc/horizoncreative",
+    tags: ["Next.js", "TypeScript", "EmailJS", "JavaScript", "CSS"],
   },
   {
     id: 5,
-    title: "Learning Management System",
+    title: "CandleRush 2",
+    subtitle: "candlerush.es",
     description:
-      "Sistema de gestión de aprendizaje con cursos interactivos, evaluaciones automáticas y seguimiento de progreso.",
+      "Segunda version de CandleRush, una plataforma mejorada de simulación y juego de trading de criptomonedas. Analisis profundo en sección Mi Perfil. Seleccion de Par y Temporalidad. Apuestas automaticas con resolución integrada.",
     image: "/placeholder.svg?height=300&width=500",
-    date: "Noviembre 2023",
-    link: "https://lms-demo.com",
-    github: "https://github.com/usuario/lms",
-    tags: ["Next.js", "Supabase", "Tailwind", "Framer Motion"],
+    date: "5 de Mayo 2025",
+    link: "https://candlerush.es",
+    github: "https://github.com/420btc/CandleRush2",
+    tags: ["Next.js", "Supabase", "TypeScript"],
   },
   {
     id: 6,
-    title: "Real Estate Platform",
+    title: "NotfoundInk",
+    subtitle: "notfoundink.art",
     description:
-      "Plataforma inmobiliaria con búsqueda avanzada, tours virtuales 360° y sistema de gestión de propiedades.",
+      "Portfolio web para NotfoundInk, una colección de arte digital, con integración de acuñado de NFTs en la página web, conexión con billetera y sistema de ventas.",
     image: "/placeholder.svg?height=300&width=500",
-    date: "Octubre 2023",
-    link: "https://realestate-demo.com",
-    github: "https://github.com/usuario/realestate",
-    tags: ["Angular", "NestJS", "Three.js", "MySQL"],
+    date: "10 de Mayo 2025",
+    link: "https://notfoundink.art",
+    github: "https://github.com/420btc/notfoundink",
+    tags: ["Next.js", "TypeScript", "Supabase", "Stripe", "Solana"],
   },
   {
     id: 7,
-    title: "Fitness Tracking App",
-    description:
-      "Aplicación móvil para seguimiento de ejercicios con planes personalizados, métricas de progreso y comunidad social.",
+    title: "AI Dreamer",
+    subtitle: "aidreamer.es",
+    description: "Plataforma web diseñada para que los usuarios registren, analicen y exploren sus sueños desde una perspectiva inspirada en las teorías psicoanalíticas de Sigmund Freud. Ofrece herramientas interactivas para el trabajo con los sueños, un diccionario de símbolos oníricos y la capacidad de llevar un historial detallado de las experiencias nocturnas.",
     image: "/placeholder.svg?height=300&width=500",
-    date: "Septiembre 2023",
-    link: "https://fitness-tracker.com",
-    github: "https://github.com/usuario/fitness",
-    tags: ["React Native", "Firebase", "Redux", "Chart.js"],
+    date: "17 de Mayo 2025",
+    link: "https://dreamsfreud.vercel.app/",
+    github: "https://github.com/420btc/DreamFreud",
+    tags: ["Next.js", "TypeScript", "Supabase", "OpenAI", "JavaScript"],
   },
   {
     id: 8,
-    title: "Cryptocurrency Portfolio",
+    title: "YourDayIn",
+    subtitle: "yourdayin.es",
     description:
-      "Dashboard para gestión de portafolio de criptomonedas con análisis técnico, alertas de precio y trading automatizado.",
+      "Aplicación web y móvil con Agente IA integrado para ayudarte a planificar tu día con los 5 lugares para visitar en función de tu búsqueda. Integración con OpenAI para obtener información sobre los lugares.",
     image: "/placeholder.svg?height=300&width=500",
-    date: "Agosto 2023",
-    link: "https://crypto-portfolio.com",
-    github: "https://github.com/usuario/crypto",
-    tags: ["Vue.js", "WebSocket", "TradingView", "Node.js"],
+    date: "21 de Mayo 2025",
+    link: "https://tudiaen.vercel.app/game",
+    github: "https://github.com/420btc/Tud-aen",
+    tags: ["Next.js", "TypeScript", "JavaScript", "OpenAI"],
   },
   {
     id: 9,
-    title: "Recipe Sharing Platform",
-    description:
-      "Plataforma social para compartir recetas con búsqueda inteligente, planificación de comidas y lista de compras automática.",
+    title: "Book Creator PDF",
+    subtitle: "pdfbookcreator.es",
+    description: "Aplicación web y móvil para crear libros PDF con contenido personalizado y en línea. Integración con OpenAI para obtener información sobre los libros en un chat integrado.",
     image: "/placeholder.svg?height=300&width=500",
-    date: "Julio 2023",
-    link: "https://recipe-platform.com",
+    date: "23 de Mayo 2025", 
+    link: "https://bookcreatorr.netlify.app/",
     github: "https://github.com/usuario/recipes",
-    tags: ["Next.js", "Prisma", "Cloudinary", "Stripe"],
+    tags: ["Next.js", "TypeScript", "OpenAI", "PDF"],
   },
   {
     id: 10,
-    title: "Project Management Tool",
+    title: "Facetime Tracker",
+    subtitle: "facetimertrack.com",
     description:
-      "Herramienta de gestión de proyectos con metodologías ágiles, seguimiento de tiempo y colaboración en equipo en tiempo real.",
+      "FaceTime Tracker es una aplicación web que utiliza inteligencia artificial para detectar y registrar el tiempo que pasas frente a la cámara. Especialmente útil para medir la exposición a videollamadas, clases virtuales o cualquier actividad que requiera el uso de cámara web.",
     image: "/placeholder.svg?height=300&width=500",
-    date: "Junio 2023",
+    date: "1 de Junio 2025",
     link: "https://project-manager.com",
     github: "https://github.com/usuario/project-mgmt",
-    tags: ["React", "GraphQL", "Apollo", "PostgreSQL"],
+    tags: ["Next.js", "TypeScript", "TensorFlow", "OpenCV"],
   },
 ]
 
@@ -124,8 +144,8 @@ export default function Portfolio() {
   return (
     <div className="min-h-screen bg-background text-foreground">
       {/* Header */}
-      <header className="sticky top-0 z-50 w-full border-b border-border bg-background/80 backdrop-blur-md supports-[backdrop-filter]:bg-background/60">
-        <div className="container flex h-16 items-center">
+      <header className="sticky top-0 z-40 w-full border-b border-border bg-background/20 backdrop-blur-md supports-[backdrop-filter]:bg-background/20">
+        <div className="container flex h-14 items-center">
           <div className="flex-1">
             <Link href="/" className="text-4xl font-bold text-foreground hover:text-primary transition-colors">
               Carlos Pastor Freire
@@ -214,7 +234,16 @@ export default function Portfolio() {
                   <div className="p-8 lg:p-12 flex flex-col justify-center bg-card">
                     <CardHeader className="p-0 mb-6">
                       <div className="flex items-center justify-between mb-2">
-                        <CardTitle className="text-2xl md:text-3xl text-card-foreground">{project.title}</CardTitle>
+                        <div>
+                          <CardTitle className="text-2xl md:text-3xl text-card-foreground">
+                            {project.title}
+                          </CardTitle>
+                          {project.subtitle && (
+                            <div className="text-muted-foreground text-2xl md:text-3xl">
+                              {project.subtitle}
+                            </div>
+                          )}
+                        </div>
                         <Badge variant="secondary" className="bg-secondary text-secondary-foreground">
                           {project.date}
                         </Badge>
@@ -263,14 +292,11 @@ export default function Portfolio() {
                 <h2 className="text-3xl md:text-4xl font-bold mb-6 text-foreground">Sobre mí</h2>
                 <div className="space-y-4 text-muted-foreground">
                   <p>
-                    Soy un desarrollador full-stack apasionado por crear soluciones web innovadoras y funcionales. Con
-                    más de 3 años de experiencia, me especializo en tecnologías modernas como React, Next.js, Node.js y
-                    bases de datos tanto SQL como NoSQL.
+                    Soy Carlos Freire, un desarrollador full-stack apasionado por crear proyectos innovadores y funcionales. Con
+                    experiencia en tecnologías modernas como React, Next.js, Node.js y bases de datos tanto SQL como NoSQL.
                   </p>
                   <p>
-                    Mi enfoque se centra en escribir código limpio, escalable y mantenible, siempre buscando las mejores
-                    prácticas y las últimas tendencias en desarrollo web. Me encanta resolver problemas complejos y
-                    transformar ideas en productos digitales exitosos.
+                    Mi enfoque se centra en los LLMs como herramienta para resolver problemas complejos y la creación de mis propios proyectos acelerandose con la IA y editores de código.
                   </p>
                   <p>
                     Cuando no estoy programando, disfruto aprendiendo nuevas tecnologías, contribuyendo a proyectos de
@@ -281,7 +307,7 @@ export default function Portfolio() {
               <div className="relative">
                 <div className="aspect-square rounded-2xl overflow-hidden border border-border shadow-lg dark:shadow-xl bg-muted/20">
                   <Image
-                    src="/placeholder.svg?height=400&width=400"
+                    src="/yop2.jpeg"
                     alt="About me"
                     width={400}
                     height={400}
@@ -308,11 +334,6 @@ export default function Portfolio() {
                 <Link href="mailto:tu@email.com">
                   <Mail className="mr-2 h-4 w-4" />
                   Enviar Email
-                </Link>
-              </Button>
-              <Button variant="outline" size="lg" asChild className="border-border hover:bg-muted">
-                <Link href="https://linkedin.com/in/tu-perfil" target="_blank" rel="noopener noreferrer">
-                  LinkedIn
                 </Link>
               </Button>
             </div>
