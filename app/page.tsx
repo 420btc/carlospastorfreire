@@ -126,8 +126,8 @@ export default function Portfolio() {
       {/* Header */}
       <header className="sticky top-0 z-50 w-full border-b border-border bg-background/80 backdrop-blur-md supports-[backdrop-filter]:bg-background/60">
         <div className="container flex h-16 items-center justify-between">
-          <Link href="/" className="text-xl font-bold text-foreground hover:text-primary transition-colors">
-            Carlos Freire
+          <Link href="/" className="text-4xl font-bold text-foreground hover:text-primary transition-colors">
+            Carlos Pastor Freire
           </Link>
           <nav className="hidden md:flex items-center space-x-6">
             <Link
