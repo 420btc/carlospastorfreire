@@ -81,10 +81,11 @@ const capitulos = [
   {
     id: 10,
     titulo: "Capítulo 10: En desarrollo",
-    descripcion: "Próximamente más aventuras",
-    fecha: "Próximamente",
+    descripcion: "En proceso de creación - ¡Pronto disponible!",
+    fecha: "En desarrollo",
     archivo: null,
-    audio: null
+    audio: null,
+    enDesarrollo: true
   },
   {
     id: 11,
@@ -143,14 +144,23 @@ export default function NovelaPage() {
                 <div className="flex flex-col md:flex-row justify-between gap-4 w-full">
                   <div className="flex-1 min-w-0">
                     <div className="flex items-center gap-2">
-                      <h3 className={`text-lg font-bold ${capitulo.esLibroCompleto ? 'text-blue-600 dark:text-blue-400' : ''}`}>
-                        {capitulo.titulo}
-                      </h3>
-                      {capitulo.esLibroCompleto && (
-                        <span className="bg-blue-100 text-blue-800 text-xs font-medium px-2.5 py-0.5 rounded-full dark:bg-blue-900 dark:text-blue-300">
-                          ¡Nuevo!
-                        </span>
-                      )}
+                      <div className="flex items-center gap-2">
+                        <h3 className={`text-lg font-bold ${capitulo.esLibroCompleto ? 'text-blue-600 dark:text-blue-400' : ''}`}>
+                          {capitulo.titulo}
+                        </h3>
+                        {capitulo.esLibroCompleto ? (
+                          <span className="bg-blue-100 text-blue-800 text-xs font-medium px-2.5 py-0.5 rounded-full dark:bg-blue-900 dark:text-blue-300">
+                            ¡Nuevo!
+                          </span>
+                        ) : capitulo.enDesarrollo ? (
+                          <span className="bg-orange-100 text-orange-800 text-xs font-medium px-2.5 py-0.5 rounded-full dark:bg-orange-900/30 dark:text-orange-300 border border-orange-200 dark:border-orange-800">
+                            <div className="flex items-center">
+                              <span className="w-2 h-2 rounded-full bg-orange-500 mr-1"></span>
+                              Trabajando
+                            </div>
+                          </span>
+                        ) : null}
+                      </div>
                     </div>
                     <p className={`text-sm ${capitulo.esLibroCompleto ? 'text-gray-700 dark:text-gray-300' : 'text-muted-foreground'}`}>
                       {capitulo.descripcion}
