@@ -540,6 +540,34 @@ export default function Portfolio() {
                         </div>
                       </div>
                     )}
+                    {project.id === 11 && (
+                      // Ícono en la esquina inferior derecha del contenido - FaceTime Tracker
+                      <div className="absolute bottom-0 right-0 translate-x-[-10px] pointer-events-none hidden md:block">
+                        <div className="transform scale-[3] origin-bottom-right">
+                          <Image 
+                            src="/trackericono.png"
+                            alt="FaceTime Tracker Icon"
+                            width={40}
+                            height={40}
+                            className="w-14 h-14 -mt-14"
+                          />
+                        </div>
+                      </div>
+                    )}
+                    {project.id === 12 && (
+                      // Ícono en la esquina inferior derecha del contenido - Logs de Psicología
+                      <div className="absolute bottom-0 right-0 translate-x-[-10px] pointer-events-none hidden md:block">
+                        <div className="transform scale-[3] origin-bottom-right">
+                          <Image 
+                            src="/depuracion.png"
+                            alt="Logs de Psicología Icon"
+                            width={40}
+                            height={40}
+                            className="w-14 h-14 -mt-10"
+                          />
+                        </div>
+                      </div>
+                    )}
                     <div className="flex-1 mt-2 sm:mt-0">
                       <CardHeader className="p-0 mb-2 sm:mb-6 relative">
                       <div className="flex flex-col sm:flex-row sm:items-center gap-2 mb-2">
