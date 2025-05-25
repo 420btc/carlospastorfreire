@@ -22,7 +22,7 @@ interface ProjectType {
   github: string
   tags: string[]
   status: 'completed' | 'in-progress' // Estado del proyecto: completado o en progreso
-  category: 'web' | 'game' | 'other'
+  category: 'web' | 'game' | 'photo' | 'other'
 }
 
 const projects: ProjectType[] = [
@@ -155,14 +155,29 @@ const projects: ProjectType[] = [
     "tags": ["Next.js", "TypeScript", "TensorFlow", "OpenCV"],
     "status": "in-progress",
     "category": "web"
+  },
+  {
+    "id": 11,
+    "title": "Tienda Fotográfica",
+    "subtitle": "Redbubble",
+    "description": "Colección personal de fotografías astronómicas capturadas desde diferentes localizaciones. Incluye imágenes de planetas y fenómenos celestes, capturadas con equipo especializado y procesadas digitalmente.",
+    "image": "/tiendaa.png",
+    "date": "15 de Mayo 2025",
+    "link": "https://www.redbubble.com/es/people/carlosfreire/shop?asc=u",
+    "github": "#",
+    "tags": ["Fotografía Nocturna", "Astrofotografía", "Procesamiento Digital"],
+    "status": "in-progress",
+    "category": "photo"
   }
 ]
 export default function Portfolio() {
   const [activeFilter, setActiveFilter] = useState<string>('all');
 
   const filteredProjects = activeFilter === 'all' 
-    ? projects 
-    : projects.filter(project => project.category === activeFilter);
+    ? projects.filter(project => project.category !== 'photo')
+    : activeFilter === 'photo'
+      ? projects.filter(project => project.category === 'photo')
+      : projects.filter(project => project.category === activeFilter);
 
   return (
     <div className="min-h-screen bg-background text-foreground">
@@ -278,6 +293,13 @@ export default function Portfolio() {
                 onClick={() => setActiveFilter('game')}
               >
                 Juegos
+              </Button>
+              <Button 
+                variant={activeFilter === 'photo' ? 'default' : 'outline'} 
+                className="px-6 py-2 text-base rounded-full transition-colors"
+                onClick={() => setActiveFilter('photo')}
+              >
+                Fotografía
               </Button>
             </div>
           </div>
@@ -518,18 +540,23 @@ export default function Portfolio() {
                         ))}
                       </div>
                       <div className="flex flex-col sm:flex-row gap-3 mt-6">
-                        <Button asChild className="shadow-md hover:shadow-lg transition-shadow w-full sm:w-auto">
+                        <Button 
+                          asChild 
+                          className={`shadow-md hover:shadow-lg transition-shadow w-full sm:w-auto ${project.id === 11 ? 'bg-red-600 hover:bg-red-700' : ''}`}
+                        >
                           <Link href={project.link} target="_blank" rel="noopener noreferrer" className="flex items-center justify-center">
                             <ExternalLink className="mr-2 h-4 w-4" />
-                            Ver Proyecto
+                            {project.id === 11 ? 'Ver Web' : 'Ver Proyecto'}
                           </Link>
                         </Button>
+                        {project.id !== 11 && (
                         <Button variant="outline" asChild className="border-border hover:bg-muted w-full sm:w-auto">
                           <Link href={project.github} target="_blank" rel="noopener noreferrer" className="flex items-center justify-center">
                             <Github className="mr-2 h-4 w-4" />
                             Código
                           </Link>
                         </Button>
+                        )}
                       </div>
                     </CardContent>
                   </div>

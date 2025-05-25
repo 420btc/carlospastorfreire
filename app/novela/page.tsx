@@ -125,7 +125,9 @@ export default function NovelaPage() {
             </div>
             
             <p className="text-xl text-muted-foreground mt-6">
-              El descubrimiento de un secreto profundo y antiguo bajo la superficie de un pueblo aparentemente normal. Este secreto, relacionado con estructuras ocultas y fenómenos inexplicables, desafía la comprensión de los jóvenes protagonistas y los empuja a una investigación peligrosa que pone a prueba su amistad y los confronta con las acciones ocultas de aquellos en quienes confiaban, sugiriendo que están desenterrando una historia oculta de su pueblo entero.
+            El descubrimiento de un secreto profundo y antiguo bajo la superficie de un pueblo aparentemente normal. Este secreto, ligado a estructuras ocultas y fenómenos inexplicables, desafía la comprensión de los jóvenes protagonistas y los arrastra a una peligrosa investigación que pone a prueba su amistad, enfrentándolos a las acciones encubiertas de aquellos en quienes confiaban y revelando una historia oculta que envuelve a todo su pueblo.
+
+
             </p>
 
             {/* Tarjeta de Resumen en Podcast */}
