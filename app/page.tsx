@@ -186,7 +186,7 @@ const projects: ProjectType[] = [
     "id": 13,
     "title": "GeoQuizzer",
     "subtitle": "geoquizzer.es",
-    "description": "Aplicación móvil para gestión de tareas con recordatorios inteligentes, categorización y seguimiento de progreso. Diseñada para maximizar la productividad personal y profesional con una interfaz intuitiva.",
+    "description": "Aplicación y web juego de preguntas geográficas con preguntas aleatorias y respuesta correcta. Potenciado con IA y amCharts5. Realidad mixta en desarrollo junto con camara virtual en dispositivos móviles.",
     "image": "/geoquizzer.png",
     "date": "25 de Junio 2025",
     "link": "#",
