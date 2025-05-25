@@ -88,7 +88,7 @@ const projects: ProjectType[] = [
     "link": "https://candlerush.es",
     "github": "https://github.com/420btc/CandleRush2",
     "tags": ["Next.js", "Supabase", "TypeScript", "JavaScript"],
-    "status": "in-progress",
+    "status": "completed",
     "category": "game"
   },
   {
@@ -168,6 +168,32 @@ const projects: ProjectType[] = [
     "tags": ["Fotografía Nocturna", "Astrofotografía", "Procesamiento Digital"],
     "status": "in-progress",
     "category": "photo"
+  },
+  {
+    "id": 12,
+    "title": "Logs de Psicología",
+    "subtitle": "logsdepsicologia.es",
+    "description": "Juego interactivo basado en el concepto de la mente humana como sistema computacional, donde explorarás la psicología a través de un prisma diferente. ¿Y si ir al psicólogo es como activar los logs de depuración? Tu rol será el de un Ingeniero de sistemas mentales.",
+    "image": "/depurador.png",
+    "date": "15 de Junio 2025",
+    "link": "https://v0-juego-interactivo-psicologia.vercel.app/",
+    "github": "https://github.com/420btc/Psicolog-acomoLogsDepuracion",
+    "tags": ["React", "Next.js", "MongoDB", "Educación", "TypeScript"],
+    "status": "in-progress",
+    "category": "web"
+  },
+  {
+    "id": 13,
+    "title": "Aplicación de Tareas",
+    "subtitle": "Gestor de Productividad",
+    "description": "Aplicación móvil para gestión de tareas con recordatorios inteligentes, categorización y seguimiento de progreso. Diseñada para maximizar la productividad personal y profesional con una interfaz intuitiva.",
+    "image": "/produ.png",
+    "date": "25 de Junio 2025",
+    "link": "#",
+    "github": "#",
+    "tags": ["React Native", "Firebase", "UI/UX", "Productividad"],
+    "status": "in-progress",
+    "category": "web"
   }
 ]
 export default function Portfolio() {
