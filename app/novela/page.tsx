@@ -109,8 +109,22 @@ export default function NovelaPage() {
           
           <div className="text-center mb-12">
             <h1 className="text-4xl md:text-5xl font-bold mb-2">Bajo la Normalidad</h1>
-            <p className="text-xl text-muted-foreground">
-            El descubrimiento de un secreto profundo y antiguo bajo la superficie de un pueblo aparentemente normal. Este secreto, relacionado con estructuras ocultas y fenómenos inexplicables, desafía la comprensión de los jóvenes protagonistas y los empuja a una investigación peligrosa que pone a prueba su amistad y los confronta con las acciones ocultas de aquellos en quienes confiaban, sugiriendo que están desenterrando una "historia oculta del pueblo entero"
+            
+            {/* Tarjeta de la portada */}
+            <div className="flex justify-center my-8">
+              <div className="w-full max-w-md overflow-hidden rounded-lg shadow-lg bg-white dark:bg-gray-800">
+                <div className="relative" style={{ paddingBottom: '150%' }}> {/* Mantener proporción 2:3 para 1024x1536 */}
+                  <img 
+                    src="/portada1.png" 
+                    alt="Portada de Bajo la Normalidad" 
+                    className="absolute inset-0 w-full h-full object-cover"
+                  />
+                </div>
+              </div>
+            </div>
+            
+            <p className="text-xl text-muted-foreground mt-6">
+              El descubrimiento de un secreto profundo y antiguo bajo la superficie de un pueblo aparentemente normal. Este secreto, relacionado con estructuras ocultas y fenómenos inexplicables, desafía la comprensión de los jóvenes protagonistas y los empuja a una investigación peligrosa que pone a prueba su amistad y los confronta con las acciones ocultas de aquellos en quienes confiaban, sugiriendo que están desenterrando una historia oculta de su pueblo entero.
             </p>
           </div>
         </div>
