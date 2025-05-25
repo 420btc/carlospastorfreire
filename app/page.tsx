@@ -159,14 +159,20 @@ export default function Portfolio() {
           </nav>
           <div className="flex-1 flex justify-end">
             <div className="flex items-center space-x-2">
-              <Button variant="ghost" size="icon" className="text-muted-foreground hover:text-foreground">
-                <Github className="h-4 w-4" />
+              <Button asChild variant="ghost" size="icon" className="text-muted-foreground hover:text-foreground">
+                <a href="https://github.com/420btc" target="_blank" rel="noopener noreferrer">
+                  <Github className="h-4 w-4" />
+                </a>
               </Button>
-              <Button variant="ghost" size="icon" className="text-muted-foreground hover:text-foreground">
-                <Twitter className="h-4 w-4" />
+              <Button asChild variant="ghost" size="icon" className="text-muted-foreground hover:text-foreground">
+                <a href="https://x.com/CarlosFreire0" target="_blank" rel="noopener noreferrer">
+                  <Twitter className="h-4 w-4" />
+                </a>
               </Button>
-              <Button variant="ghost" size="icon" className="text-muted-foreground hover:text-foreground">
-                <Mail className="h-4 w-4" />
+              <Button asChild variant="ghost" size="icon" className="text-muted-foreground hover:text-foreground">
+                <a href="mailto:tu@email.com">
+                  <Mail className="h-4 w-4" />
+                </a>
               </Button>
               <ThemeToggle />
             </div>
