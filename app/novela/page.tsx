@@ -168,78 +168,82 @@ export default function NovelaPage() {
                   : ''
               }`}
             >
-              <CardContent className="p-6">
-                <div className="flex flex-col md:flex-row justify-between gap-4 w-full">
-                  <div className="flex-1 min-w-0">
-                    <div className="flex items-center gap-2">
+              <CardContent className="p-4 sm:p-6">
+                <div className="flex flex-col">
+                  <div className="flex flex-col sm:flex-row justify-between gap-4 w-full">
+                    <div className="flex-1 min-w-0">
                       <div className="flex items-center gap-2">
-                        <h3 className={`text-lg font-bold ${capitulo.esLibroCompleto ? 'text-blue-600 dark:text-blue-400' : ''}`}>
-                          {capitulo.titulo}
-                        </h3>
-                        {capitulo.esLibroCompleto ? (
-                          <span className="bg-blue-100 text-blue-800 text-xs font-medium px-2.5 py-0.5 rounded-full dark:bg-blue-900 dark:text-blue-300">
-                            ¡Nuevo!
+                        <div className="flex flex-wrap items-center gap-2">
+                          <h3 className={`text-base sm:text-lg font-bold ${capitulo.esLibroCompleto ? 'text-blue-600 dark:text-blue-400' : ''}`}>
+                            {capitulo.titulo}
+                          </h3>
+                          {capitulo.esLibroCompleto ? (
+                            <span className="bg-blue-100 text-blue-800 text-xs font-medium px-2.5 py-0.5 rounded-full dark:bg-blue-900 dark:text-blue-300">
+                              ¡Nuevo!
+                            </span>
+                          ) : capitulo.enDesarrollo ? (
+                            <span className="bg-orange-100 text-orange-800 text-xs font-medium px-2.5 py-0.5 rounded-full dark:bg-orange-900/30 dark:text-orange-300 border border-orange-200 dark:border-orange-800">
+                              <div className="flex items-center">
+                                <span className="w-2 h-2 rounded-full bg-orange-500 mr-1"></span>
+                                Trabajando
+                              </div>
+                            </span>
+                          ) : null}
+                        </div>
+                      </div>
+                      <p className={`text-sm mt-1 ${capitulo.esLibroCompleto ? 'text-gray-700 dark:text-gray-300' : 'text-muted-foreground'}`}>
+                        {capitulo.descripcion}
+                      </p>
+                      <div className="flex items-center gap-2 mt-1">
+                        <span className="text-xs text-muted-foreground">{capitulo.fecha}</span>
+                        {capitulo.audio && (
+                          <span className="flex items-center text-xs text-blue-500">
+                            <Headphones className="h-3 w-3 mr-1" /> Audio disponible
                           </span>
-                        ) : capitulo.enDesarrollo ? (
-                          <span className="bg-orange-100 text-orange-800 text-xs font-medium px-2.5 py-0.5 rounded-full dark:bg-orange-900/30 dark:text-orange-300 border border-orange-200 dark:border-orange-800">
-                            <div className="flex items-center">
-                              <span className="w-2 h-2 rounded-full bg-orange-500 mr-1"></span>
-                              Trabajando
-                            </div>
-                          </span>
-                        ) : null}
+                        )}
                       </div>
                     </div>
-                    <p className={`text-sm ${capitulo.esLibroCompleto ? 'text-gray-700 dark:text-gray-300' : 'text-muted-foreground'}`}>
-                      {capitulo.descripcion}
-                    </p>
-                    <div className="flex items-center gap-2 mt-1">
-                      <span className="text-xs text-muted-foreground">{capitulo.fecha}</span>
-                      {capitulo.audio && (
-                        <span className="flex items-center text-xs text-blue-500">
-                          <Headphones className="h-3 w-3 mr-1" /> Audio disponible
-                        </span>
+                    
+                    <div className="flex-shrink-0 flex sm:justify-end mt-2 sm:mt-0">
+                      {capitulo.esLibroCompleto ? (
+                        <div className="w-full sm:w-48">
+                          <Button 
+                            variant="default" 
+                            size="lg" 
+                            className="w-full bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 sm:py-3 px-4 sm:px-6 rounded-lg shadow-md hover:shadow-lg transition-all duration-200 text-sm sm:text-base"
+                          >
+                            Registrarse
+                          </Button>
+                        </div>
+                      ) : capitulo.archivo ? (
+                        <Button 
+                          asChild 
+                          variant="outline" 
+                          size="sm" 
+                          className="w-full sm:w-auto gap-2"
+                        >
+                          <Link href={capitulo.archivo} download>
+                            <Download className="h-4 w-4" />
+                            <span className="hidden sm:inline">Descargar</span>
+                            <span className="sm:hidden">PDF</span>
+                          </Link>
+                        </Button>
+                      ) : (
+                        <Button variant="outline" size="sm" className="w-full sm:w-auto">
+                          Próximamente
+                        </Button>
                       )}
                     </div>
-                    {capitulo.audio && (
-                      <div className="mt-2">
-                        <AudioPlayer 
-                          src={capitulo.audio} 
-                          title={`${capitulo.titulo} - Audiobook`} 
-                        />
-                      </div>
-                    )}
                   </div>
-                  <div className="flex-shrink-0 flex justify-end">
-                    {capitulo.esLibroCompleto ? (
-                      <div className="w-full md:w-48 mt-2">
-                        <Button 
-                          variant="default" 
-                          size="lg" 
-                          className="w-full bg-blue-500 hover:bg-blue-600 text-white font-bold py-3 px-6 rounded-lg shadow-md hover:shadow-lg transition-all duration-200"
-                        >
-                          Registrarse
-                        </Button>
-                      </div>
-                    ) : capitulo.archivo ? (
-                      <Button 
-                        asChild 
-                        variant="outline" 
-                        size="sm" 
-                        className="w-full md:w-auto gap-2"
-                      >
-                        <Link href={capitulo.archivo} download>
-                          <Download className="h-4 w-4" />
-                          <span className="hidden sm:inline">Descargar</span>
-                          <span className="sm:hidden">PDF</span>
-                        </Link>
-                      </Button>
-                    ) : (
-                      <Button variant="outline" size="sm" disabled>
-                        Próximamente
-                      </Button>
-                    )}
-                  </div>
+                  
+                  {capitulo.audio && (
+                    <div className="mt-3 w-full">
+                      <AudioPlayer 
+                        src={capitulo.audio} 
+                        title={`${capitulo.titulo} - Audiobook`} 
+                      />
+                    </div>
+                  )}
                 </div>
               </CardContent>
             </Card>

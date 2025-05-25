@@ -115,25 +115,25 @@ export function AudioPlayer({ src, title, label = 'Audiobook' }: AudioPlayerProp
             max={duration || 100}
             step={1}
             onValueChange={handleTimeChange}
-            className="flex-1"
+            className="flex-1 [&_.slider-thumb]:h-2 [&_.slider-thumb]:w-2 [&_.slider-thumb]:-translate-y-1/2 [&_.slider-thumb]:border-2"
           />
           <span className="text-xs text-muted-foreground w-10 text-right">
             {formatTime(duration || 0)}
           </span>
         </div>
         
-        <div className="flex items-center gap-1 w-24">
+        <div className="flex items-center gap-1 w-16 sm:w-24">
           <Button
             variant="ghost"
             size="icon"
             onClick={toggleMute}
-            className="h-8 w-8"
+            className="h-7 w-7 sm:h-8 sm:w-8"
             aria-label={isMuted ? 'Activar sonido' : 'Silenciar'}
           >
             {isMuted || volume === 0 ? (
-              <VolumeX className="h-4 w-4" />
+              <VolumeX className="h-3 w-3 sm:h-4 sm:w-4" />
             ) : (
-              <Volume2 className="h-4 w-4" />
+              <Volume2 className="h-3 w-3 sm:h-4 sm:w-4" />
             )}
           </Button>
           <Slider
@@ -141,7 +141,7 @@ export function AudioPlayer({ src, title, label = 'Audiobook' }: AudioPlayerProp
             max={100}
             step={1}
             onValueChange={handleVolumeChange}
-            className="w-16"
+            className="w-8 sm:w-16 [&_.slider-thumb]:h-2 [&_.slider-thumb]:w-2 sm:[&_.slider-thumb]:h-3 sm:[&_.slider-thumb]:w-3"
           />
         </div>
       </div>
