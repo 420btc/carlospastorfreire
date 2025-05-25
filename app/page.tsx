@@ -321,11 +321,12 @@ export default function Portfolio() {
                     <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent dark:from-black/40" />
                   </div>
                   <div className="p-4 sm:p-8 lg:p-12 flex-1 flex flex-col justify-center bg-card relative">
-                    {/* Sección móvil - Fecha y estado en la parte superior */}
+                    {/* Sección móvil - Fecha (sin estado) */}
                     <div className="sm:hidden flex justify-between items-start mb-4">
                       <div className="text-sm text-muted-foreground">
                         {project.date}
                       </div>
+                      {project.id !== 11 && (
                       <Badge 
                         variant="outline" 
                         className={`px-2 py-0.5 text-xs font-medium ${
@@ -345,13 +346,15 @@ export default function Portfolio() {
                           </span>
                         </div>
                       </Badge>
+                      )}
                     </div>
                     
-                    {/* Sección escritorio - Fecha y estado en esquina superior derecha */}
+                    {/* Sección escritorio - Fecha (sin estado) */}
                     <div className="hidden sm:flex absolute top-6 right-6 flex-col items-end space-y-2">
                       <div className="text-sm text-muted-foreground">
                         {project.date}
                       </div>
+                      {project.id !== 11 && (
                       <Badge 
                         variant="outline" 
                         className={`px-3 py-1 text-xs font-medium ${
@@ -369,6 +372,7 @@ export default function Portfolio() {
                           {project.status === 'completed' ? 'Finalizado' : 'Trabajando'}
                         </div>
                       </Badge>
+                      )}
                     </div>
                     {project.id === 1 && (
                       // Ícono en la esquina inferior derecha del contenido - Candlerush
