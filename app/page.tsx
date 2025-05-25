@@ -1,7 +1,7 @@
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
-import { ExternalLink, Github, Mail, Subtitles, Twitter } from "lucide-react"
+import { ExternalLink, Github, Mail, Subtitles, Twitter, Pencil } from "lucide-react"
 import Link from "next/link"
 import Image from "next/image"
 import { ThemeToggle } from "@/components/theme-toggle"
@@ -169,7 +169,13 @@ export default function Portfolio() {
             </Link>
           </nav>
           <div className="flex-1 flex justify-end">
-            <div className="flex items-center space-x-2">
+            <div className="flex items-center space-x-4">
+              <Link
+                href="/novela"
+                className="text-sm font-medium text-muted-foreground hover:text-primary transition-colors hidden lg:flex items-center gap-1"
+              >
+                Mi Novela <Pencil className="h-3.5 w-3.5" />
+              </Link>
               <Button asChild variant="ghost" size="icon" className="text-muted-foreground hover:text-foreground">
                 <a href="https://github.com/420btc" target="_blank" rel="noopener noreferrer">
                   <Github className="h-4 w-4" />
