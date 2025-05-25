@@ -91,7 +91,7 @@ const capitulos = [
     id: 11,
     titulo: "Libro Completo",
     descripcion: "Disfruta de la experiencia completa de la novela con todos los capítulos",
-    fecha: "Disponible ahora",
+    fecha: "¡Pronto disponible!",
     esLibroCompleto: true
   }
 ]
