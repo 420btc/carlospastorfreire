@@ -496,7 +496,7 @@ export default function Portfolio() {
                     experiencia en tecnologías modernas como React, Next.js, Node.js y bases de datos tanto SQL como NoSQL.
                   </p>
                   <p>
-                    Mi enfoque se centra en los LLMs como herramienta para resolver problemas complejos y la creación de mis propios proyectos acelerandose con la IA y editores de código.
+                    Mi enfoque se centra en los LLMs como herramienta para resolver problemas complejos y la creación de mis propios proyectos acelerandose con los ultimos modelos y editores de código.
                   </p>
                   <p>
                     Cuando no estoy programando, disfruto aprendiendo nuevas tecnologías, contribuyendo a proyectos de
