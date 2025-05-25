@@ -23,18 +23,30 @@ export function AudioPlayer({ src, title }: AudioPlayerProps) {
     if (!audio) return;
 
     const updateTime = () => setCurrentTime(audio.currentTime);
-    const updateDuration = () => setDuration(audio.duration);
+    const updateDuration = () => {
+      if (audio.duration !== Infinity && !isNaN(audio.duration)) {
+        setDuration(audio.duration);
+      }
+    };
+    const handleLoadedMetadata = () => {
+      updateDuration();
+    };
 
     audio.addEventListener('timeupdate', updateTime);
     audio.addEventListener('durationchange', updateDuration);
+    audio.addEventListener('loadedmetadata', handleLoadedMetadata);
     audio.addEventListener('ended', () => setIsPlaying(false));
+
+    // Forzar carga de metadatos
+    audio.load();
 
     return () => {
       audio.removeEventListener('timeupdate', updateTime);
       audio.removeEventListener('durationchange', updateDuration);
+      audio.removeEventListener('loadedmetadata', handleLoadedMetadata);
       audio.removeEventListener('ended', () => setIsPlaying(false));
     };
-  }, []);
+  }, [src]); // Añadido src como dependencia para recargar cuando cambie
 
   useEffect(() => {
     if (!audioRef.current) return;
@@ -74,6 +86,7 @@ export function AudioPlayer({ src, title }: AudioPlayerProps) {
   };
 
   const formatTime = (time: number) => {
+    if (isNaN(time) || !isFinite(time)) return '0:00';
     const minutes = Math.floor(time / 60);
     const seconds = Math.floor(time % 60);
     return `${minutes}:${seconds < 10 ? '0' : ''}${seconds}`;
@@ -81,7 +94,7 @@ export function AudioPlayer({ src, title }: AudioPlayerProps) {
 
   return (
     <div className="w-full">
-      <audio ref={audioRef} src={src} preload="metadata" />
+      <audio ref={audioRef} src={src} preload="metadata" onLoadedMetadata={() => console.log('Metadata loaded')} />
       <div className="flex items-center gap-2 mb-1">
         <Button
           variant="ghost"

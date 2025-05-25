@@ -126,8 +126,8 @@ export default function NovelaPage() {
               }`}
             >
               <CardContent className="p-6">
-                <div className="flex flex-col md:flex-row justify-between gap-4">
-                  <div className="flex-1">
+                <div className="flex flex-col md:flex-row justify-between gap-4 w-full">
+                  <div className="flex-1 min-w-0">
                     <div className="flex items-center gap-2">
                       <h3 className={`text-lg font-bold ${capitulo.esLibroCompleto ? 'text-yellow-600 dark:text-yellow-400' : ''}`}>
                         {capitulo.titulo}
@@ -158,7 +158,7 @@ export default function NovelaPage() {
                       </div>
                     )}
                   </div>
-                  <div className="flex-shrink-0 flex flex-col items-end gap-2">
+                  <div className="flex-shrink-0 flex justify-end">
                     {capitulo.esLibroCompleto ? (
                       <Button 
                         variant="default" 
@@ -193,7 +193,7 @@ export default function NovelaPage() {
         </div>
 
         <div className="mt-12 text-center text-sm text-muted-foreground">
-          <p>© {new Date().getFullYear()} Carlos Pastor Freire. Todos los derechos reservados.</p>
+          <p> 2023 Carlos Pastor Freire. Todos los derechos reservados.</p>
         </div>
       </div>
     </div>
