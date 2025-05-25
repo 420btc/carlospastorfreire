@@ -172,11 +172,11 @@ export default function NovelaPage() {
                 <div className="flex flex-col">
                   <div className="flex flex-col sm:flex-row justify-between gap-4 w-full">
                     <div className="flex-1 min-w-0">
-                      <div className="flex items-center gap-2">
-                        <div className="flex flex-wrap items-center gap-2">
-                          <h3 className={`text-base sm:text-lg font-bold ${capitulo.esLibroCompleto ? 'text-blue-600 dark:text-blue-400' : ''}`}>
-                            {capitulo.titulo}
-                          </h3>
+                      <div className="flex flex-col sm:flex-row sm:items-center sm:gap-2">
+                        <h3 className={`text-base sm:text-lg font-bold ${capitulo.esLibroCompleto ? 'text-blue-600 dark:text-blue-400' : ''}`}>
+                          {capitulo.titulo}
+                        </h3>
+                        <div className="flex items-center gap-2 mt-1 sm:mt-0">
                           {capitulo.esLibroCompleto ? (
                             <span className="bg-blue-100 text-blue-800 text-xs font-medium px-2.5 py-0.5 rounded-full dark:bg-blue-900 dark:text-blue-300">
                               ¡Nuevo!
@@ -189,12 +189,13 @@ export default function NovelaPage() {
                               </div>
                             </span>
                           ) : null}
+                          <span className="text-xs text-muted-foreground sm:hidden">{capitulo.fecha}</span>
                         </div>
                       </div>
                       <p className={`text-sm mt-1 ${capitulo.esLibroCompleto ? 'text-gray-700 dark:text-gray-300' : 'text-muted-foreground'}`}>
                         {capitulo.descripcion}
                       </p>
-                      <div className="flex items-center gap-2 mt-1">
+                      <div className="hidden sm:flex items-center gap-2 mt-1">
                         <span className="text-xs text-muted-foreground">{capitulo.fecha}</span>
                         {capitulo.audio && (
                           <span className="flex items-center text-xs text-blue-500">
@@ -202,6 +203,15 @@ export default function NovelaPage() {
                           </span>
                         )}
                       </div>
+                      {/* Muestra la fecha en móvil solo si no hay audio */}
+                      {capitulo.audio && (
+                        <div className="sm:hidden flex items-center gap-2 mt-1">
+                          <span className="text-xs text-muted-foreground">{capitulo.fecha}</span>
+                          <span className="flex items-center text-xs text-blue-500">
+                            <Headphones className="h-3 w-3 mr-1" /> Audio disponible
+                          </span>
+                        </div>
+                      )}
                     </div>
                     
                     <div className="flex-shrink-0 flex sm:justify-end mt-2 sm:mt-0">

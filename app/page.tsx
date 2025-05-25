@@ -347,57 +347,54 @@ export default function Portfolio() {
                     <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent dark:from-black/40" />
                   </div>
                   <div className="p-4 sm:p-8 lg:p-12 flex-1 flex flex-col justify-center bg-card relative">
-                    {/* Sección móvil - Fecha (sin estado) */}
-                    <div className="sm:hidden flex justify-between items-start mb-4">
-                      <div className="text-sm text-muted-foreground">
-                        {project.date}
-                      </div>
+                    {/* Sección móvil - Solo estado sin fecha */}
+                    <div className="flex sm:hidden justify-end items-start mb-2">
                       {project.id !== 11 && (
-                      <Badge 
-                        variant="outline" 
-                        className={`px-2 py-0.5 text-xs font-medium ${
-                          project.status === 'completed' 
-                            ? 'bg-green-100 text-green-800 dark:bg-green-900/30 dark:text-green-300 border-green-200 dark:border-green-800' 
-                            : 'bg-orange-100 text-orange-800 dark:bg-orange-900/30 dark:text-orange-300 border-orange-200 dark:border-orange-800'
-                        }`}
-                      >
-                        <div className="flex items-center">
-                          <span className={`w-2 h-2 rounded-full mr-1 ${
+                        <Badge 
+                          variant="outline" 
+                          className={`px-2 py-0.5 text-xs font-medium ${
                             project.status === 'completed' 
-                              ? 'bg-green-500' 
-                              : 'bg-orange-500'
-                          }`}></span>
-                          <span className="text-xs">
-                            {project.status === 'completed' ? 'Finalizado' : 'Trabajando'}
-                          </span>
-                        </div>
-                      </Badge>
+                              ? 'bg-green-100 text-green-800 dark:bg-green-900/30 dark:text-green-300 border-green-200 dark:border-green-800' 
+                              : 'bg-orange-100 text-orange-800 dark:bg-orange-900/30 dark:text-orange-300 border-orange-200 dark:border-orange-800'
+                          }`}
+                        >
+                          <div className="flex items-center">
+                            <span className={`w-2 h-2 rounded-full mr-1 ${
+                              project.status === 'completed' 
+                                ? 'bg-green-500' 
+                                : 'bg-orange-500'
+                            }`}></span>
+                            <span className="text-xs">
+                              {project.status === 'completed' ? 'Finalizado' : 'Trabajando'}
+                            </span>
+                          </div>
+                        </Badge>
                       )}
                     </div>
                     
-                    {/* Sección escritorio - Fecha (sin estado) */}
+                    {/* Sección escritorio - Fecha y estado */}
                     <div className="hidden sm:flex absolute top-6 right-6 flex-col items-end space-y-2">
                       <div className="text-sm text-muted-foreground">
                         {project.date}
                       </div>
                       {project.id !== 11 && (
-                      <Badge 
-                        variant="outline" 
-                        className={`px-3 py-1 text-xs font-medium ${
-                          project.status === 'completed' 
-                            ? 'bg-green-100 text-green-800 dark:bg-green-900/30 dark:text-green-300 border-green-200 dark:border-green-800' 
-                            : 'bg-orange-100 text-orange-800 dark:bg-orange-900/30 dark:text-orange-300 border-orange-200 dark:border-orange-800'
-                        }`}
-                      >
-                        <div className="flex items-center">
-                          <span className={`w-2 h-2 rounded-full mr-2 ${
+                        <Badge 
+                          variant="outline" 
+                          className={`px-3 py-1 text-xs font-medium ${
                             project.status === 'completed' 
-                              ? 'bg-green-500' 
-                              : 'bg-orange-500'
-                          }`}></span>
-                          {project.status === 'completed' ? 'Finalizado' : 'Trabajando'}
-                        </div>
-                      </Badge>
+                              ? 'bg-green-100 text-green-800 dark:bg-green-900/30 dark:text-green-300 border-green-200 dark:border-green-800' 
+                              : 'bg-orange-100 text-orange-800 dark:bg-orange-900/30 dark:text-orange-300 border-orange-200 dark:border-orange-800'
+                          }`}
+                        >
+                          <div className="flex items-center">
+                            <span className={`w-2 h-2 rounded-full mr-2 ${
+                              project.status === 'completed' 
+                                ? 'bg-green-500' 
+                                : 'bg-orange-500'
+                            }`}></span>
+                            {project.status === 'completed' ? 'Finalizado' : 'Trabajando'}
+                          </div>
+                        </Badge>
                       )}
                     </div>
                     {project.id === 1 && (
