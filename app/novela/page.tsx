@@ -12,7 +12,7 @@ const capitulos = [
     descripcion: "Los inicios de una investigación que desafía la realidad",
     fecha: "10 de Junio 2013",
     archivo: "/novela/capitulos/Capitulo 1 - Espías y Experimentos.pdf",
-    audio: "/novela/capitulos/Capitulo 1.wav"
+    audio: "/novela/capitulos/Capitulo 1.mp3"
   },
   {
     id: 2,
