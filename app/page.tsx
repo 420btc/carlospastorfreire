@@ -1,11 +1,12 @@
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
-import { ExternalLink, Github, Mail, Subtitles, Twitter, Pencil } from "lucide-react"
+import { ExternalLink, Github, Mail, Subtitles, Twitter, Pencil, Headphones } from "lucide-react"
 import Link from "next/link"
 import Image from "next/image"
 import { ThemeToggle } from "@/components/theme-toggle"
 import { ProfileImage } from "@/components/custom/ProfileImage"
+import { AnimatedTitle } from "@/components/AnimatedTitle"
 
 interface ProjectType {
   id: number
@@ -219,10 +220,7 @@ export default function Portfolio() {
         <div className="container relative">
           <div className="mx-auto max-w-4xl text-center">
             <ProfileImage />
-            <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold tracking-tight mb-6 text-foreground">
-              Desarrollador
-              <span className="block text-primary">Full Stack</span>
-            </h1>
+            <AnimatedTitle />
             <p className="text-lg md:text-xl text-muted-foreground mb-8 max-w-2xl mx-auto">
               Creo experiencias web modernas y funcionales. Especializado en React, Next.js y TypeScript para construir
               aplicaciones que me permiten demostrar mis habilidades.
