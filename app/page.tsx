@@ -149,9 +149,9 @@ export default function Portfolio() {
       <header className="sticky top-0 z-40 w-full border-b border-border bg-background/20 backdrop-blur-md supports-[backdrop-filter]:bg-background/20">
         <div className="container flex h-14 items-center">
           <div className="flex-1">
-            <Link href="/" className="text-2xl sm:text-3xl md:text-4xl font-bold text-foreground hover:text-primary transition-colors leading-tight">
+            <Link href="/" className="text-2xl sm:text-3xl md:text-4xl font-bold text-foreground hover:text-primary transition-colors">
               <span className="hidden sm:inline">Carlos Pastor Freire</span>
-              <span className="sm:hidden text-base block">Carlos<br />Freire</span>
+              <span className="sm:hidden text-base whitespace-nowrap relative -top-0.5">Carlos Freire</span>
             </Link>
           </div>
           <nav className="hidden md:flex items-center space-x-12 absolute left-1/2 transform -translate-x-1/2">
@@ -239,11 +239,27 @@ export default function Portfolio() {
       {/* Projects Section */}
       <section id="projects" className="py-20 bg-muted/30">
         <div className="container">
-          <div className="text-center mb-16">
+          <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold mb-4 text-foreground">Mis Proyectos</h2>
-            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+            <p className="text-lg text-muted-foreground max-w-2xl mx-auto mb-8">
               Una selección de mis trabajos más recientes, desde aplicaciones web hasta plataformas complejas.
             </p>
+            
+            {/* Botones de filtro */}
+            <div className="flex flex-wrap justify-center gap-3 mb-12 px-4">
+              <Button 
+                variant="outline" 
+                className="px-6 py-2 text-base rounded-full border-primary/30 hover:bg-primary/10 hover:text-primary transition-colors"
+              >
+                Aplicaciones y Webs
+              </Button>
+              <Button 
+                variant="outline" 
+                className="px-6 py-2 text-base rounded-full border-primary/30 hover:bg-primary/10 hover:text-primary transition-colors"
+              >
+                Juegos
+              </Button>
+            </div>
           </div>
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12 px-4">
