@@ -347,8 +347,11 @@ export default function Portfolio() {
                     <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent dark:from-black/40" />
                   </div>
                   <div className="p-4 sm:p-8 lg:p-12 flex-1 flex flex-col justify-center bg-card relative">
-                    {/* Sección móvil - Solo estado sin fecha */}
-                    <div className="flex sm:hidden justify-end items-start mb-2">
+                    {/* Sección móvil - Estado y fecha juntos */}
+                    <div className="flex sm:hidden justify-between items-center mb-2">
+                      <div className="text-sm text-muted-foreground">
+                        {project.date}
+                      </div>
                       {project.id !== 11 && (
                         <Badge 
                           variant="outline" 
@@ -549,9 +552,6 @@ export default function Portfolio() {
                               {project.subtitle}
                             </div>
                           )}
-                        </div>
-                        <div className="sm:hidden text-xs text-muted-foreground">
-                          {project.date}
                         </div>
                       </div>
                       <CardDescription className="text-base leading-relaxed text-muted-foreground">
