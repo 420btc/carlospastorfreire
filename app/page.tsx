@@ -50,7 +50,7 @@ const projects: ProjectType[] = [
     subtitle: "carlosfpv.es",
     description:
       "Mi propia web personal para la venta de servicios de grabación con drones FPV en la Costa del Sol. Secciones de contacto, meteorología, servicios y proyectos.",
-    image: "/placeholder.svg?height=300&width=500",
+    image: "/freirefpv.png",
     date: "7 de Abril 2025",
     link: "https://carlosfpv.es",
     github: "https://github.com/420btc/freirefpv",
@@ -62,7 +62,7 @@ const projects: ProjectType[] = [
     subtitle: "horizoncreative.es",
     description:
       "Horizon Creative es una página web de portafolio profesional para agencias creativas, freelancers y estudios de diseño. Permite mostrar proyectos, servicios, equipo y datos de contacto.",
-    image: "/placeholder.svg?height=300&width=500",
+    image: "/Horizonf.png",
     date: "25 de Abril 2025",
     link: "https://horizoncreative.es",
     github: "https://github.com/420btc/horizoncreative",
@@ -74,7 +74,7 @@ const projects: ProjectType[] = [
     subtitle: "candlerush.es",
     description:
       "Segunda version de CandleRush, una plataforma mejorada de simulación y juego de trading de criptomonedas. Analisis profundo en sección Mi Perfil. Seleccion de Par y Temporalidad. Apuestas automaticas con resolución integrada.",
-    image: "/placeholder.svg?height=300&width=500",
+    image: "/rush2.png",
     date: "5 de Mayo 2025",
     link: "https://candlerush.es",
     github: "https://github.com/420btc/CandleRush2",
@@ -86,7 +86,7 @@ const projects: ProjectType[] = [
     subtitle: "notfoundink.art",
     description:
       "Portfolio web para NotfoundInk, una colección de arte digital, con integración de acuñado de NFTs en la página web, conexión con billetera y sistema de ventas.",
-    image: "/placeholder.svg?height=300&width=500",
+    image: "/notfound.png",
     date: "10 de Mayo 2025",
     link: "https://notfoundink.art",
     github: "https://github.com/420btc/notfoundink",
@@ -97,7 +97,7 @@ const projects: ProjectType[] = [
     title: "AI Dreamer",
     subtitle: "aidreamer.es",
     description: "Plataforma web diseñada para que los usuarios registren, analicen y exploren sus sueños desde una perspectiva inspirada en las teorías psicoanalíticas de Sigmund Freud. Ofrece herramientas interactivas para el trabajo con los sueños, un diccionario de símbolos oníricos y la capacidad de llevar un historial detallado de las experiencias nocturnas.",
-    image: "/placeholder.svg?height=300&width=500",
+    image: "/aidreamer.png",
     date: "17 de Mayo 2025",
     link: "https://dreamsfreud.vercel.app/",
     github: "https://github.com/420btc/DreamFreud",
@@ -109,7 +109,7 @@ const projects: ProjectType[] = [
     subtitle: "yourdayin.es",
     description:
       "Aplicación web y móvil con Agente IA integrado para ayudarte a planificar tu día con los 5 lugares para visitar en función de tu búsqueda. Integración con OpenAI para obtener información sobre los lugares.",
-    image: "/placeholder.svg?height=300&width=500",
+    image: "/yourdayin.png",
     date: "21 de Mayo 2025",
     link: "https://tudiaen.vercel.app/game",
     github: "https://github.com/420btc/Tud-aen",
@@ -120,7 +120,7 @@ const projects: ProjectType[] = [
     title: "Book Creator PDF",
     subtitle: "pdfbookcreator.es",
     description: "Aplicación web y móvil para crear libros PDF con contenido personalizado y en línea. Integración con OpenAI para obtener información sobre los libros en un chat integrado.",
-    image: "/placeholder.svg?height=300&width=500",
+    image: "/bookcreator.png",
     date: "23 de Mayo 2025", 
     link: "https://bookcreatorr.netlify.app/",
     github: "https://github.com/usuario/recipes",
@@ -132,7 +132,7 @@ const projects: ProjectType[] = [
     subtitle: "facetimertrack.com",
     description:
       "FaceTime Tracker es una aplicación web que utiliza inteligencia artificial para detectar y registrar el tiempo que pasas frente a la cámara. Especialmente útil para medir la exposición a videollamadas, clases virtuales o cualquier actividad que requiera el uso de cámara web.",
-    image: "/placeholder.svg?height=300&width=500",
+    image: "/facetime.png",
     date: "1 de Junio 2025",
     link: "https://project-manager.com",
     github: "https://github.com/usuario/project-mgmt",
@@ -252,7 +252,7 @@ export default function Portfolio() {
                       <div className="absolute bottom-0 right-0 translate-x-[-10px] pointer-events-none hidden md:block">
                         <div className="transform scale-[3] origin-bottom-right">
                           <Image 
-                            src="/meteopng.png"
+                            src="/meteo2png.png"
                             alt="MeteoMálaga Icon"
                             width={40}
                             height={40}
