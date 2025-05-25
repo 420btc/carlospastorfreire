@@ -148,7 +148,8 @@ export default function Portfolio() {
         <div className="container flex h-14 items-center">
           <div className="flex-1">
             <Link href="/" className="text-2xl sm:text-3xl md:text-4xl font-bold text-foreground hover:text-primary transition-colors">
-              Carlos Pastor Freire
+              <span className="hidden sm:inline">Carlos Pastor Freire</span>
+              <span className="sm:hidden text-sm">Carlos Freire</span>
             </Link>
           </div>
           <nav className="hidden md:flex items-center space-x-12 absolute left-1/2 transform -translate-x-1/2">
