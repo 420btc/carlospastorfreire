@@ -127,6 +127,32 @@ export default function NovelaPage() {
             <p className="text-xl text-muted-foreground mt-6">
               El descubrimiento de un secreto profundo y antiguo bajo la superficie de un pueblo aparentemente normal. Este secreto, relacionado con estructuras ocultas y fenómenos inexplicables, desafía la comprensión de los jóvenes protagonistas y los empuja a una investigación peligrosa que pone a prueba su amistad y los confronta con las acciones ocultas de aquellos en quienes confiaban, sugiriendo que están desenterrando una historia oculta de su pueblo entero.
             </p>
+
+            {/* Tarjeta de Resumen en Podcast */}
+            <div className="mt-8 md:col-span-2">
+              <Card className="bg-gradient-to-br from-muted/20 to-muted/10 border-border hover:shadow-lg transition-shadow">
+                <CardContent className="p-6">
+                  <div className="flex flex-col md:flex-row items-start md:items-center gap-6">
+                    <div className="w-full md:w-32 h-32 bg-gradient-to-r from-blue-500 to-blue-600 rounded-lg flex-shrink-0 flex items-center justify-center">
+                      <Headphones className="h-12 w-12 text-white" />
+                    </div>
+                    <div className="flex-1">
+                      <h3 className="text-xl font-bold mb-2">Resumen de la Novela</h3>
+                      <p className="text-muted-foreground mb-4">
+                        Escucha un resumen detallado de la trama, personajes y misterios de "Bajo la Normalidad". Perfecto para ponerte al día o recordar los detalles clave de la historia.
+                      </p>
+                      <div className="w-full">
+                        <AudioPlayer 
+                          src="/novela/capitulos/Podcast.mp3" 
+                          title="Resumen completo de Bajo la Normalidad"
+                          label="Podcast"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+            </div>
           </div>
         </div>
 

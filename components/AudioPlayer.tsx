@@ -8,9 +8,10 @@ import { Slider } from "@/components/ui/slider";
 interface AudioPlayerProps {
   src: string;
   title: string;
+  label?: string;
 }
 
-export function AudioPlayer({ src, title }: AudioPlayerProps) {
+export function AudioPlayer({ src, title, label = 'Audiobook' }: AudioPlayerProps) {
   const [isPlaying, setIsPlaying] = useState(false);
   const [duration, setDuration] = useState(0);
   const [currentTime, setCurrentTime] = useState(0);
@@ -107,6 +108,7 @@ export function AudioPlayer({ src, title }: AudioPlayerProps) {
         </Button>
         
         <div className="flex-1 flex items-center gap-2">
+          {label && <span className="text-sm font-medium text-muted-foreground">{label}</span>}
           <span className="text-xs text-muted-foreground w-10">{formatTime(currentTime)}</span>
           <Slider
             value={[currentTime]}
@@ -143,7 +145,6 @@ export function AudioPlayer({ src, title }: AudioPlayerProps) {
           />
         </div>
       </div>
-      <p className="text-xs text-muted-foreground truncate">Audiobook</p>
     </div>
   );
 }
