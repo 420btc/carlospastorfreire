@@ -109,7 +109,7 @@ export default function NovelaPage() {
           </Button>
           
           <div className="text-center mb-12">
-            <h1 className="text-4xl md:text-5xl font-bold mb-2">Bajo la Normalidad</h1>
+            <h1 className="text-4xl md:text-5xl font-bold mb-2"></h1>
             
             {/* Tarjeta de la portada */}
             <div className="flex justify-center my-8">
