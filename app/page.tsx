@@ -1,3 +1,6 @@
+'use client';
+
+import { useState } from 'react';
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
@@ -19,6 +22,7 @@ interface ProjectType {
   github: string
   tags: string[]
   status: 'completed' | 'in-progress' // Estado del proyecto: completado o en progreso
+  category: 'web' | 'game' | 'other'
 }
 
 const projects: ProjectType[] = [
@@ -32,7 +36,8 @@ const projects: ProjectType[] = [
     "link": "https://btcer.fun",
     "github": "https://github.com/420btc/cndle",
     "tags": ["React Native", "TypeScript", "JavaScript"],
-    "status": "completed"
+    "status": "completed",
+    "category": "web"
   },
   {
     "id": 2,
@@ -44,7 +49,8 @@ const projects: ProjectType[] = [
     "link": "https://meteomalaga.fun",
     "github": "https://github.com/420btc/meteomalaga",
     "tags": ["React Native", "JavaScript", "TypeScript", "Supabase"],
-    "status": "completed"
+    "status": "completed",
+    "category": "web"
   },
   {
     "id": 3,
@@ -56,7 +62,8 @@ const projects: ProjectType[] = [
     "link": "https://carlosfpv.es",
     "github": "https://github.com/420btc/freirefpv",
     "tags": ["Vue.js", "Python", "HTML", "EmailJS"],
-    "status": "completed"
+    "status": "completed",
+    "category": "web"
   },
   {
     "id": 4,
@@ -68,7 +75,8 @@ const projects: ProjectType[] = [
     "link": "https://horizoncreative.es",
     "github": "https://github.com/420btc/horizoncreative",
     "tags": ["Next.js", "TypeScript", "EmailJS", "JavaScript", "CSS"],
-    "status": "completed"
+    "status": "completed",
+    "category": "web"
   },
   {
     "id": 5,
@@ -80,7 +88,8 @@ const projects: ProjectType[] = [
     "link": "https://candlerush.es",
     "github": "https://github.com/420btc/CandleRush2",
     "tags": ["Next.js", "Supabase", "TypeScript", "JavaScript"],
-    "status": "in-progress"
+    "status": "in-progress",
+    "category": "game"
   },
   {
     "id": 6,
@@ -92,7 +101,8 @@ const projects: ProjectType[] = [
     "link": "https://notfoundink.art",
     "github": "https://github.com/420btc/notfoundink",
     "tags": ["Next.js", "TypeScript", "Supabase", "Stripe", "Solana"],
-    "status": "completed"
+    "status": "completed",
+    "category": "web"
   },
   {
     "id": 7,
@@ -104,7 +114,8 @@ const projects: ProjectType[] = [
     "link": "https://dreamsfreud.vercel.app/",
     "github": "https://github.com/420btc/DreamFreud",
     "tags": ["Next.js", "TypeScript", "Supabase", "OpenAI", "JavaScript"],
-    "status": "completed"
+    "status": "completed",
+    "category": "web"
   },
   {
     "id": 8,
@@ -116,7 +127,8 @@ const projects: ProjectType[] = [
     "link": "https://tudiaen.vercel.app/game",
     "github": "https://github.com/420btc/Tud-aen",
     "tags": ["Next.js", "TypeScript", "JavaScript", "OpenAI"],
-    "status": "in-progress"
+    "status": "in-progress",
+    "category": "web"
   },
   {
     "id": 9,
@@ -128,7 +140,8 @@ const projects: ProjectType[] = [
     "link": "https://bookcreatorr.netlify.app/",
     "github": "https://github.com/usuario/recipes",
     "tags": ["Next.js", "TypeScript", "OpenAI", "PDF"],
-    "status": "completed"
+    "status": "completed",
+    "category": "web"
   },
   {
     "id": 10,
@@ -140,10 +153,17 @@ const projects: ProjectType[] = [
     "link": "https://facedetection-wine.vercel.app/",
     "github": "https://github.com/420btc/FacetimeTracker",
     "tags": ["Next.js", "TypeScript", "TensorFlow", "OpenCV"],
-    "status": "in-progress"
+    "status": "in-progress",
+    "category": "web"
   }
 ]
 export default function Portfolio() {
+  const [activeFilter, setActiveFilter] = useState<string>('all');
+
+  const filteredProjects = activeFilter === 'all' 
+    ? projects 
+    : projects.filter(project => project.category === activeFilter);
+
   return (
     <div className="min-h-screen bg-background text-foreground">
       {/* Header */}
@@ -246,14 +266,16 @@ export default function Portfolio() {
             {/* Botones de filtro */}
             <div className="flex flex-wrap justify-center gap-3 mb-12 px-4">
               <Button 
-                variant="outline" 
-                className="px-6 py-2 text-base rounded-full border-primary/30 hover:bg-primary/10 hover:text-primary transition-colors"
+                variant={activeFilter === 'all' ? 'default' : 'outline'} 
+                className="px-6 py-2 text-base rounded-full transition-colors"
+                onClick={() => setActiveFilter('all')}
               >
                 Aplicaciones y Webs
               </Button>
               <Button 
-                variant="outline" 
-                className="px-6 py-2 text-base rounded-full border-primary/30 hover:bg-primary/10 hover:text-primary transition-colors"
+                variant={activeFilter === 'game' ? 'default' : 'outline'} 
+                className="px-6 py-2 text-base rounded-full transition-colors"
+                onClick={() => setActiveFilter('game')}
               >
                 Juegos
               </Button>
@@ -261,7 +283,7 @@ export default function Portfolio() {
           </div>
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12 px-4">
-            {projects.map((project) => (
+            {filteredProjects.map((project) => (
               <Card
                 key={project.id}
                 className="overflow-hidden group hover:shadow-xl dark:hover:shadow-2xl transition-all duration-300 border-border bg-card h-full"
@@ -515,6 +537,13 @@ export default function Portfolio() {
               </div>
             </Card>
             ))}
+          </div>
+          
+          <div className="text-center mt-12">
+            <p className="text-muted-foreground">
+              Mostrando {filteredProjects.length} de {projects.length} proyectos
+              {activeFilter !== 'all' && ` (filtrado por ${activeFilter === 'game' ? 'Juegos' : 'Aplicaciones y Webs'})`}
+            </p>
           </div>
         </div>
       </section>
