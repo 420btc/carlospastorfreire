@@ -81,8 +81,8 @@ const capitulos = [
   {
     id: 10,
     titulo: "Capítulo 10: En desarrollo",
-    descripcion: "En proceso de creación - ¡Pronto disponible!",
-    fecha: "En desarrollo",
+    descripcion: "",
+    fecha: "!Pronto disponible!",
     archivo: null,
     audio: null,
     enDesarrollo: true

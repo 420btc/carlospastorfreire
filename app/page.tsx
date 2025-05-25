@@ -184,10 +184,10 @@ const projects: ProjectType[] = [
   },
   {
     "id": 13,
-    "title": "Aplicación de Tareas",
-    "subtitle": "Gestor de Productividad",
+    "title": "GeoQuizzer",
+    "subtitle": "geoquizzer.es",
     "description": "Aplicación móvil para gestión de tareas con recordatorios inteligentes, categorización y seguimiento de progreso. Diseñada para maximizar la productividad personal y profesional con una interfaz intuitiva.",
-    "image": "/produ.png",
+    "image": "/geoquizzer.png",
     "date": "25 de Junio 2025",
     "link": "#",
     "github": "#",
