@@ -174,13 +174,13 @@ const projects: ProjectType[] = [
     "title": "Logs de Psicología",
     "subtitle": "logsdepsicologia.es",
     "description": "Juego interactivo basado en el concepto de la mente humana como sistema computacional, donde explorarás la psicología a través de un prisma diferente. ¿Y si ir al psicólogo es como activar los logs de depuración? Tu rol será el de un Ingeniero de sistemas mentales.",
-    "image": "/depurador.png",
+    "image": "/Depurador.png",
     "date": "15 de Junio 2025",
     "link": "https://v0-juego-interactivo-psicologia.vercel.app/",
     "github": "https://github.com/420btc/Psicolog-acomoLogsDepuracion",
     "tags": ["React", "Next.js", "MongoDB", "Educación", "TypeScript"],
     "status": "in-progress",
-    "category": "web"
+    "category": "game"
   },
   {
     "id": 13,
