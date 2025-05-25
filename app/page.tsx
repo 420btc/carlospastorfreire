@@ -207,14 +207,20 @@ export default function Portfolio() {
             </p>
           </div>
 
-          <div className="grid gap-8 md:gap-12">
+          <div className="space-y-8 md:space-y-12">
             {projects.map((project, index) => (
               <Card
                 key={project.id}
-                className="overflow-hidden group hover:shadow-xl dark:hover:shadow-2xl transition-all duration-300 border-border bg-card"
+                className={`overflow-hidden group hover:shadow-xl dark:hover:shadow-2xl transition-all duration-300 border-border bg-card max-w-6xl mx-auto ${
+                  index % 2 === 0 ? 'lg:mr-auto lg:ml-0' : 'lg:ml-auto lg:mr-0'
+                }`}
               >
-                <div className={`grid lg:grid-cols-2 gap-0 ${index % 2 === 1 ? "lg:grid-flow-col-dense" : ""}`}>
-                  <div className={`relative aspect-video lg:aspect-auto ${index % 2 === 1 ? 'lg:col-start-2' : ''}`}>
+                <div className="grid lg:grid-cols-2 gap-0">
+                  <div 
+                    className={`relative aspect-video lg:aspect-auto ${
+                      index % 2 === 0 ? 'lg:order-1' : 'lg:order-2'
+                    }`}
+                  >
                     <Image
                       src={project.image || "/placeholder.svg"}
                       alt={project.title}
@@ -222,9 +228,12 @@ export default function Portfolio() {
                       className="object-cover group-hover:scale-105 transition-transform duration-300"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent dark:from-black/40" />
-
                   </div>
-                  <div className="p-6 sm:p-8 lg:p-12 flex flex-col justify-center bg-card relative">
+                  <div 
+                    className={`p-6 sm:p-8 lg:p-12 flex flex-col justify-center bg-card relative ${
+                      index % 2 === 0 ? 'lg:order-2' : 'lg:order-1'
+                    }`}
+                  >
                     {project.id === 1 && (
                       // Ícono en la esquina inferior derecha del contenido - Candlerush
                       <div className="absolute bottom-0 right-0 pointer-events-none hidden md:block">
