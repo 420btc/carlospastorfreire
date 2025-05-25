@@ -242,7 +242,7 @@ export default function Portfolio() {
                             alt="Candlerush Icon"
                             width={40}
                             height={40}
-                            className="w-12 h-12 -mt-8"
+                            className="w-14 h-14 -mt-8"
                           />
                         </div>
                       </div>
@@ -256,7 +256,119 @@ export default function Portfolio() {
                             alt="MeteoMálaga Icon"
                             width={40}
                             height={40}
+                            className="w-14 h-14 -mt-14"
+                          />
+                        </div>
+                      </div>
+                    )}
+                    {project.id === 3 && (
+                      // Ícono en la esquina inferior derecha del contenido - Carlos Freire FPV
+                      <div className="absolute bottom-0 right-0 translate-x-[-10px] pointer-events-none hidden md:block">
+                        <div className="transform scale-[3] origin-bottom-right">
+                          <Image 
+                            src="/iconofpv.png"
+                            alt="FPV Icon"
+                            width={40}
+                            height={40}
+                            className="w-14 h-14 -mt-14"
+                          />
+                        </div>
+                      </div>
+                    )}
+                    {project.id === 4 && (
+                      // Ícono en la esquina inferior derecha del contenido - Horizon Creative
+                      <div className="absolute bottom-0 right-0 translate-x-[-10px] pointer-events-none hidden md:block">
+                        <div className="transform scale-[3] origin-bottom-right">
+                          <Image 
+                            src="/logobueno.png"
+                            alt="Horizon Creative Icon"
+                            width={40}
+                            height={40}
+                            className="w-12 h-12"
+                          />
+                        </div>
+                      </div>
+                    )}
+                    {project.id === 5 && (
+                      // Ícono en la esquina inferior derecha del contenido - Candlerush 2
+                      <div className="absolute bottom-0 right-0 translate-x-[-10px] pointer-events-none hidden md:block">
+                        <div className="transform scale-[3] origin-bottom-right">
+                          <Image 
+                            src="/candleicono.png"
+                            alt="Candlerush 2 Icon"
+                            width={80}
+                            height={40}
+                            className="w-16 h-12 object-contain"
+                          />
+                        </div>
+                      </div>
+                    )}
+                    {project.id === 6 && (
+                      // Ícono en la esquina inferior derecha del contenido - NotfoundInk
+                      <div className="absolute bottom-0 right-0 translate-x-[-10px] pointer-events-none hidden md:block">
+                        <div className="transform scale-[3] origin-bottom-right">
+                          <Image 
+                            src="/foundicon2.png"
+                            alt="NotfoundInk Icon"
+                            width={40}
+                            height={40}
+                            className="w-11 h-11 -mt-14"
+                          />
+                        </div>
+                      </div>
+                    )}
+                    {project.id === 7 && (
+                      // Ícono en la esquina inferior derecha del contenido - AI Dreamer
+                      <div className="absolute bottom-0 right-0 translate-x-[-10px] pointer-events-none hidden md:block">
+                        <div className="transform scale-[3] origin-bottom-right">
+                          <Image 
+                            src="/aidreamerx.png"
+                            alt="AI Dreamer Icon"
+                            width={40}
+                            height={40}
                             className="w-12 h-12 -mt-14"
+                          />
+                        </div>
+                      </div>
+                    )}
+                    {project.id === 8 && (
+                      // Ícono en la esquina inferior derecha del contenido - YourDayIn
+                      <div className="absolute bottom-0 right-0 translate-x-[-10px] pointer-events-none hidden md:block">
+                        <div className="transform scale-[3] origin-bottom-right">
+                          <Image 
+                            src="/dayinlogo.png"
+                            alt="YourDayIn Icon"
+                            width={40}
+                            height={40}
+                            className="w-14 h-14 -mt-14"
+                          />
+                        </div>
+                      </div>
+                    )}
+                    {project.id === 9 && (
+                      // Ícono en la esquina inferior derecha del contenido - Book Creator PDF
+                      <div className="absolute bottom-0 right-0 translate-x-[-10px] pointer-events-none hidden md:block">
+                        <div className="transform scale-[3] origin-bottom-right">
+                          <Image 
+                            src="/bookcreatord.png"
+                            alt="Book Creator PDF Icon"
+                            width={40}
+                            height={40}
+                            className="w-14 h-14 -mt-14"
+                          />
+                        </div>
+                      </div>
+                    )}
+                    {project.id === 10 && (
+                      // Ícono en la esquina inferior derecha del contenido - FaceTime Tracker
+                      <div className="absolute bottom-0 right-0 translate-x-[-10px] pointer-events-none hidden md:block">
+                        <div className="transform scale-[3] origin-bottom-right">
+                          <Image 
+                            src="/trackericono.png"
+                            alt="FaceTime Tracker Icon"
+                            width={40}
+                            height={40}
+                            className="w-14 h-14 -mt-14"
                           />
                         </div>
                       </div>
