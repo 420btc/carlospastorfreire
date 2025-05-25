@@ -219,7 +219,7 @@ export default function NovelaPage() {
         </div>
 
         <div className="mt-12 text-center text-sm text-muted-foreground">
-          <p> 2023 Carlos Pastor Freire. Todos los derechos reservados.</p>
+          <p> 2025 Carlos Pastor Freire. Todos los derechos reservados.</p>
         </div>
       </div>
     </div>
