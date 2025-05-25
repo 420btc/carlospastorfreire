@@ -26,7 +26,7 @@ const projects: ProjectType[] = [
     subtitle: "btcer.fun",
     description:
       "Una plataforma de juego y simulación de trading de criptomonedas en una versión temprana con datos en tiempo real y apuestas ficticias basadas en las velas japonesas y las temporalidades, con resolución automática.",
-    image: "/placeholder.svg?height=300&width=500",
+    image: "/Candlerush2.png",
     date: "13 de Marzo 2025",
     link: "https://btcer.fun",
     github: "https://github.com/420btc/cndle",
@@ -38,7 +38,7 @@ const projects: ProjectType[] = [
     subtitle: "meteomalaga.fun",
     description:
       "Aplicación de apuestas sobre pronósticos meteorológicos para Málaga con datos en tiempo real, análisis de predicciones y estadísticas. Apuestas con resolución automática en el momento del pronóstico. ",
-    image: "/placeholder.svg?height=300&width=500",
+    image: "/metemalaga.png",
     date: "20 de Marzo 2025",
     link: "https://meteomalaga.fun",
     github: "https://github.com/420btc/meteomalaga",
@@ -147,7 +147,7 @@ export default function Portfolio() {
       <header className="sticky top-0 z-40 w-full border-b border-border bg-background/20 backdrop-blur-md supports-[backdrop-filter]:bg-background/20">
         <div className="container flex h-14 items-center">
           <div className="flex-1">
-            <Link href="/" className="text-4xl font-bold text-foreground hover:text-primary transition-colors">
+            <Link href="/" className="text-2xl sm:text-3xl md:text-4xl font-bold text-foreground hover:text-primary transition-colors">
               Carlos Pastor Freire
             </Link>
           </div>
@@ -183,7 +183,7 @@ export default function Portfolio() {
       </header>
 
       {/* Hero Section */}
-      <section className="relative py-20 md:py-32 lg:py-40 bg-gradient-to-br from-background via-muted/20 to-background">
+      <section className="relative py-12 md:py-20 lg:py-28 bg-gradient-to-br from-background via-muted/20 to-background">
         <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-secondary/5 dark:from-primary/10 dark:to-secondary/10" />
         <div className="container relative">
           <div className="mx-auto max-w-4xl text-center">
@@ -222,7 +222,7 @@ export default function Portfolio() {
                 className="overflow-hidden group hover:shadow-xl dark:hover:shadow-2xl transition-all duration-300 border-border bg-card"
               >
                 <div className={`grid lg:grid-cols-2 gap-0 ${index % 2 === 1 ? "lg:grid-flow-col-dense" : ""}`}>
-                  <div className={`relative aspect-video lg:aspect-auto ${index % 2 === 1 ? "lg:col-start-2" : ""}`}>
+                  <div className={`relative aspect-video lg:aspect-auto ${index % 2 === 1 ? 'lg:col-start-2' : ''}`}>
                     <Image
                       src={project.image || "/placeholder.svg"}
                       alt={project.title}
@@ -230,45 +230,74 @@ export default function Portfolio() {
                       className="object-cover group-hover:scale-105 transition-transform duration-300"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent dark:from-black/40" />
+
                   </div>
-                  <div className="p-8 lg:p-12 flex flex-col justify-center bg-card">
-                    <CardHeader className="p-0 mb-6">
-                      <div className="flex items-center justify-between mb-2">
+                  <div className="p-6 sm:p-8 lg:p-12 flex flex-col justify-center bg-card relative">
+                    {project.id === 1 && (
+                      // Ícono en la esquina inferior derecha del contenido - Candlerush
+                      <div className="absolute bottom-0 right-0 pointer-events-none hidden md:block">
+                        <div className="transform scale-[3] origin-bottom-right">
+                          <Image 
+                            src="/iconocandlerush.png"
+                            alt="Candlerush Icon"
+                            width={40}
+                            height={40}
+                            className="w-12 h-12 -mt-8"
+                          />
+                        </div>
+                      </div>
+                    )}
+                    {project.id === 2 && (
+                      // Ícono en la esquina inferior derecha del contenido - MeteoMálaga
+                      <div className="absolute bottom-0 right-0 translate-x-[-10px] pointer-events-none hidden md:block">
+                        <div className="transform scale-[3] origin-bottom-right">
+                          <Image 
+                            src="/meteopng.png"
+                            alt="MeteoMálaga Icon"
+                            width={40}
+                            height={40}
+                            className="w-12 h-12 -mt-14"
+                          />
+                        </div>
+                      </div>
+                    )}
+                    <CardHeader className="p-0 mb-4 sm:mb-6">
+                      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-2">
                         <div>
                           <CardTitle className="text-2xl md:text-3xl text-card-foreground">
                             {project.title}
                           </CardTitle>
                           {project.subtitle && (
-                            <div className="text-muted-foreground text-2xl md:text-3xl">
+                            <div className="text-xs sm:text-sm text-muted-foreground">{project.date}</div>
+                          )}
+                          {project.subtitle && (
+                            <div className="text-2xl md:text-3xl text-muted-foreground">
                               {project.subtitle}
                             </div>
                           )}
                         </div>
-                        <Badge variant="secondary" className="bg-secondary text-secondary-foreground">
-                          {project.date}
-                        </Badge>
                       </div>
                       <CardDescription className="text-base leading-relaxed text-muted-foreground">
                         {project.description}
                       </CardDescription>
                     </CardHeader>
-                    <CardContent className="p-0">
-                      <div className="flex flex-wrap gap-2 mb-6">
+                    <CardContent className="p-0 mt-4 sm:mt-6">
+                      <div className="flex flex-wrap gap-2 sm:gap-3 mt-4 sm:mt-6">
                         {project.tags.map((tag) => (
                           <Badge key={tag} variant="outline" className="border-border text-muted-foreground">
                             {tag}
                           </Badge>
                         ))}
                       </div>
-                      <div className="flex gap-4">
-                        <Button asChild className="shadow-md hover:shadow-lg transition-shadow">
-                          <Link href={project.link} target="_blank" rel="noopener noreferrer">
+                      <div className="flex flex-col sm:flex-row gap-3 mt-6">
+                        <Button asChild className="shadow-md hover:shadow-lg transition-shadow w-full sm:w-auto">
+                          <Link href={project.link} target="_blank" rel="noopener noreferrer" className="flex items-center justify-center">
                             <ExternalLink className="mr-2 h-4 w-4" />
                             Ver Proyecto
                           </Link>
                         </Button>
-                        <Button variant="outline" asChild className="border-border hover:bg-muted">
-                          <Link href={project.github} target="_blank" rel="noopener noreferrer">
+                        <Button variant="outline" asChild className="border-border hover:bg-muted w-full sm:w-auto">
+                          <Link href={project.github} target="_blank" rel="noopener noreferrer" className="flex items-center justify-center">
                             <Github className="mr-2 h-4 w-4" />
                             Código
                           </Link>
@@ -346,9 +375,9 @@ export default function Portfolio() {
         <div className="container">
           <div className="flex flex-col md:flex-row justify-between items-center">
             <p className="text-sm text-muted-foreground">
-              © {new Date().getFullYear()} Carlos Freire. Todos los derechos reservados.
+              &copy; {new Date().getFullYear()} Carlos Freire. Todos los derechos reservados.
             </p>
-            <div className="flex items-center space-x-4 mt-4 md:mt-0">
+            <div className="flex flex-wrap items-center gap-2 mt-4 md:mt-0">
               <Link href="#" className="text-sm text-muted-foreground hover:text-primary transition-colors">
                 Privacidad
               </Link>
