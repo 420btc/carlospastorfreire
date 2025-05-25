@@ -261,21 +261,26 @@ export default function Portfolio() {
                         </div>
                       </div>
                     )}
-                    <CardHeader className="p-0 mb-4 sm:mb-6">
-                      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-2">
+                    <CardHeader className="p-0 mb-4 sm:mb-6 relative">
+                      <div className="flex flex-col sm:flex-row sm:items-center gap-2 mb-2">
                         <div>
                           <CardTitle className="text-2xl md:text-3xl text-card-foreground">
                             {project.title}
                           </CardTitle>
-                          {project.subtitle && (
-                            <div className="text-xs sm:text-sm text-muted-foreground">{project.date}</div>
-                          )}
                           {project.subtitle && (
                             <div className="text-2xl md:text-3xl text-muted-foreground">
                               {project.subtitle}
                             </div>
                           )}
                         </div>
+                        <div className="sm:hidden text-xs text-muted-foreground">
+                          {project.date}
+                        </div>
+                      </div>
+                      <div className="hidden sm:block absolute top-0 right-0">
+                        <Badge variant="secondary" className="bg-secondary text-secondary-foreground">
+                          {project.date}
+                        </Badge>
                       </div>
                       <CardDescription className="text-base leading-relaxed text-muted-foreground">
                         {project.description}
