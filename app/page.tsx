@@ -73,7 +73,7 @@ const projects: ProjectType[] = [
     "id": 5,
     "title": "CandleRush 2",
     "subtitle": "candlerush.es",
-    "description": "Segunda versión de CandleRush, una plataforma mejorada de simulación y juego de trading de criptomonedas. Análisis profundo en sección Mi Perfil. Selección de Par y Temporalidad. Apuestas automáticas con resolución integrada.",
+    "description": "Segunda versión de CandleRush, una plataforma mejorada de simulación y juego de trading de criptomonedas. Análisis profundo en sección Mi Perfil. Selección de par y temporalidad. Apuestas automáticas inteligentes con resolución integrada.",
     "image": "/rush2.png",
     "date": "28 de Abril 2025",
     "link": "https://candlerush.es",
