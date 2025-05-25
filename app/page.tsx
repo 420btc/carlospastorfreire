@@ -647,13 +647,14 @@ export default function Portfolio() {
         <div className="container">
           <div className="mx-auto max-w-2xl text-center">
             <h2 className="text-3xl md:text-4xl font-bold mb-6 text-foreground">¿Trabajamos juntos?</h2>
-            <p className="text-lg text-muted-foreground mb-8">
-              Estoy siempre abierto a nuevos proyectos y oportunidades. Si tienes una idea o necesitas ayuda con tu
-              próximo <Badge variant="outline" className="inline-flex items-center px-2 py-0.5 text-xs font-medium bg-orange-100 text-orange-800 dark:bg-orange-900/30 dark:text-orange-300 border-orange-200 dark:border-orange-800">
+            <div className="text-lg text-muted-foreground mb-8">
+              <p className="inline">Estoy siempre abierto a nuevos proyectos y oportunidades. Si tienes una idea o necesitas ayuda con tu próximo </p>
+              <Badge variant="outline" className="inline-flex items-center px-2 py-0.5 text-xs font-medium bg-orange-100 text-orange-800 dark:bg-orange-900/30 dark:text-orange-300 border-orange-200 dark:border-orange-800">
                 <span className="w-2 h-2 rounded-full bg-orange-500 mr-1"></span>
                 Trabajo
-              </Badge> no dudes en contactarme.
-            </p>
+              </Badge>
+              <p className="inline"> no dudes en contactarme.</p>
+            </div>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button size="lg" asChild className="shadow-lg hover:shadow-xl transition-shadow">
                 <Link href="mailto:tu@email.com">
