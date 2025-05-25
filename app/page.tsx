@@ -136,8 +136,8 @@ const projects: ProjectType[] = [
     "description": "FaceTime Tracker es una aplicación web que utiliza TensorFlow para detectar y registrar el tiempo que pasas frente a tu PC. Especialmente útil para medir la exposición a videollamadas, clases virtuales o cualquier actividad que requiera el uso de cámara web.",
     "image": "/facetime.png",
     "date": "1 de Junio 2025",
-    "link": "https://project-manager.com",
-    "github": "https://github.com/usuario/project-mgmt",
+    "link": "https://facedetection-wine.vercel.app/",
+    "github": "https://github.com/420btc/FacetimeTracker",
     "tags": ["Next.js", "TypeScript", "TensorFlow", "OpenCV"],
     "status": "in-progress"
   }
