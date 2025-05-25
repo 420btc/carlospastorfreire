@@ -20,7 +20,7 @@ const capitulos = [
     descripcion: "Cuando lo cotidiano se vuelve sospechoso",
     fecha: "13 de Junio 2013",
     archivo: "/novela/capitulos/Capitulo 2 - Envidia hacia las abejas.pdf",
-    audio: "/novela/capitulos/Capitulo 2.wav"
+    audio: "/novela/capitulos/Capitulo 2.mp3"
   },
   {
     id: 3,
@@ -28,7 +28,7 @@ const capitulos = [
     descripcion: "Las apariencias engañan más de lo que creemos",
     fecha: "25 de Julio 2013",
     archivo: "/novela/capitulos/Capitulo 3 - Miradas entre las cortinas.pdf",
-    audio: "/novela/capitulos/Capitulo 3.wav"
+    audio: "/novela/capitulos/Capitulo 3.mp3"
   },
   {
     id: 4,
@@ -36,7 +36,7 @@ const capitulos = [
     descripcion: "Los sonidos que no deberían estar ahí",
     fecha: "29 de Julio 2013",
     archivo: "/novela/capitulos/Capitulo 4- Zumbídos en el Jardín.pdf",
-    audio: "/novela/capitulos/Capitulo 4.wav"
+    audio: "/novela/capitulos/Capitulo 4.mp3"
   },
   {
     id: 5,
@@ -44,7 +44,7 @@ const capitulos = [
     descripcion: "Cuando los secretos toman vida propia",
     fecha: "10 de Abril 2025",
     archivo: "/novela/capitulos/Capitulo 5 - El Laberinto de Susurros.pdf",
-    audio: "/novela/capitulos/Capitulo 5.wav"
+    audio: "/novela/capitulos/Capitulo 5.mp3"
   },
   {
     id: 6,
@@ -52,7 +52,7 @@ const capitulos = [
     descripcion: "Las estructuras que nos rodean tienen más que contarnos",
     fecha: "15 de Abril 2025",
     archivo: "/novela/capitulos/Capitulo 6 - El peso de los planos.pdf",
-    audio: "/novela/capitulos/Capitulo 6.wav"
+    audio: "/novela/capitulos/Capitulo 6.mp3"
   },
   {
     id: 7,
@@ -60,7 +60,7 @@ const capitulos = [
     descripcion: "En la oscuridad, los miedos toman forma",
     fecha: "24 de Abril 2025",
     archivo: "/novela/capitulos/Capitulo 7 - La penumbra.pdf",
-    audio: "/novela/capitulos/Capitulo 7.wav"
+    audio: "/novela/capitulos/Capitulo 7.mp3"
   },
   {
     id: 8,
@@ -68,7 +68,7 @@ const capitulos = [
     descripcion: "Lo que el oído capta cuando la vista falla",
     fecha: "2 de Mayo 2025",
     archivo: "/novela/capitulos/Capitulo 8 - Sonido en las Sombras.pdf",
-    audio: "/novela/capitulos/Capitulo 8.wav"
+    audio: "/novela/capitulos/Capitulo 8.mp3"
   },
   {
     id: 9,
@@ -76,7 +76,7 @@ const capitulos = [
     descripcion: "Los lazos que se forman en la búsqueda de la verdad",
     fecha: "21 de Mayo 2025",
     archivo: "/novela/capitulos/Capitulo 9 - Misterios y Amistad.pdf",
-    audio: "/novela/capitulos/Capitulo 9.wav"
+    audio: "/novela/capitulos/Capitulo 9.mp3"
   },
   {
     id: 10,
