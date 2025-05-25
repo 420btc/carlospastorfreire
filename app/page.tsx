@@ -149,9 +149,9 @@ export default function Portfolio() {
       <header className="sticky top-0 z-40 w-full border-b border-border bg-background/20 backdrop-blur-md supports-[backdrop-filter]:bg-background/20">
         <div className="container flex h-14 items-center">
           <div className="flex-1">
-            <Link href="/" className="text-2xl sm:text-3xl md:text-4xl font-bold text-foreground hover:text-primary transition-colors">
+            <Link href="/" className="text-2xl sm:text-3xl md:text-4xl font-bold text-foreground hover:text-primary transition-colors leading-tight">
               <span className="hidden sm:inline">Carlos Pastor Freire</span>
-              <span className="sm:hidden text-sm">Carlos Freire</span>
+              <span className="sm:hidden text-base block">Carlos<br />Freire</span>
             </Link>
           </div>
           <nav className="hidden md:flex items-center space-x-12 absolute left-1/2 transform -translate-x-1/2">
@@ -169,29 +169,45 @@ export default function Portfolio() {
             </Link>
           </nav>
           <div className="flex-1 flex justify-end">
-            <div className="flex items-center space-x-4">
+            <div className="flex items-center space-x-1 sm:space-x-4">
+              {/* Botón de Novela - Versión móvil */}
               <Link
                 href="/novela"
-                className="text-sm font-medium text-muted-foreground hover:text-primary transition-colors hidden lg:flex items-center gap-1"
+                className="lg:hidden flex items-center justify-center h-9 px-3 whitespace-nowrap rounded-md text-xs sm:text-sm font-medium text-muted-foreground hover:text-primary hover:bg-muted transition-colors border border-muted"
+              >
+                <Pencil className="h-3.5 w-3.5 mr-1" />
+                <span>Mi novela</span>
+              </Link>
+              
+              {/* Botón de Novela - Versión desktop */}
+              <Link
+                href="/novela"
+                className="hidden lg:flex text-sm font-medium text-muted-foreground hover:text-primary transition-colors items-center gap-1"
               >
                 Mi Novela <Pencil className="h-3.5 w-3.5" />
               </Link>
+              
+              {/* Botones de redes sociales */}
               <Button asChild variant="ghost" size="icon" className="text-muted-foreground hover:text-foreground">
-                <a href="https://github.com/420btc" target="_blank" rel="noopener noreferrer">
+                <a href="https://github.com/420btc" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
                   <Github className="h-4 w-4" />
                 </a>
               </Button>
               <Button asChild variant="ghost" size="icon" className="text-muted-foreground hover:text-foreground">
-                <a href="https://x.com/CarlosFreire0" target="_blank" rel="noopener noreferrer">
+                <a href="https://x.com/CarlosFreire0" target="_blank" rel="noopener noreferrer" aria-label="Twitter">
                   <Twitter className="h-4 w-4" />
                 </a>
               </Button>
-              <Button asChild variant="ghost" size="icon" className="text-muted-foreground hover:text-foreground">
-                <a href="mailto:tu@email.com">
-                  <Mail className="h-4 w-4" />
-                </a>
-              </Button>
-              <ThemeToggle />
+              
+              {/* Botones ocultos en móvil */}
+              <div className="hidden sm:flex items-center space-x-2">
+                <Button asChild variant="ghost" size="icon" className="text-muted-foreground hover:text-foreground">
+                  <a href="mailto:tu@email.com" aria-label="Email">
+                    <Mail className="h-4 w-4" />
+                  </a>
+                </Button>
+                <ThemeToggle />
+              </div>
             </div>
           </div>
         </div>
