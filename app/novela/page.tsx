@@ -85,6 +85,13 @@ const capitulos = [
     fecha: "Próximamente",
     archivo: null,
     audio: null
+  },
+  {
+    id: 11,
+    titulo: "Libro Completo",
+    descripcion: "Disfruta de la experiencia completa de la novela con todos los capítulos",
+    fecha: "Disponible ahora",
+    esLibroCompleto: true
   }
 ]
 
@@ -108,14 +115,32 @@ export default function NovelaPage() {
           </div>
         </div>
 
-        <div className="space-y-4">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           {capitulos.map((capitulo) => (
-            <Card key={capitulo.id} className="hover:shadow-md transition-shadow min-h-[120px] flex flex-col justify-center">
+            <Card 
+              key={capitulo.id} 
+              className={`hover:shadow-md transition-shadow min-h-[120px] flex flex-col justify-between h-full ${
+                capitulo.esLibroCompleto 
+                  ? 'border-2 border-yellow-400 dark:border-yellow-500 bg-gradient-to-br from-yellow-50 to-white dark:from-yellow-900/20 dark:to-gray-900 md:col-span-2'
+                  : ''
+              }`}
+            >
               <CardContent className="p-6">
-                <div className="flex justify-between items-center">
+                <div className="flex flex-col md:flex-row justify-between gap-4">
                   <div className="flex-1">
-                    <h3 className="text-lg font-semibold">{capitulo.titulo}</h3>
-                    <p className="text-sm text-muted-foreground">{capitulo.descripcion}</p>
+                    <div className="flex items-center gap-2">
+                      <h3 className={`text-lg font-bold ${capitulo.esLibroCompleto ? 'text-yellow-600 dark:text-yellow-400' : ''}`}>
+                        {capitulo.titulo}
+                      </h3>
+                      {capitulo.esLibroCompleto && (
+                        <span className="bg-yellow-100 text-yellow-800 text-xs font-medium px-2.5 py-0.5 rounded-full dark:bg-yellow-900 dark:text-yellow-300">
+                          ¡Nuevo!
+                        </span>
+                      )}
+                    </div>
+                    <p className={`text-sm ${capitulo.esLibroCompleto ? 'text-gray-700 dark:text-gray-300' : 'text-muted-foreground'}`}>
+                      {capitulo.descripcion}
+                    </p>
                     <div className="flex items-center gap-2 mt-1">
                       <span className="text-xs text-muted-foreground">{capitulo.fecha}</span>
                       {capitulo.audio && (
@@ -133,18 +158,34 @@ export default function NovelaPage() {
                       </div>
                     )}
                   </div>
-                  {capitulo.archivo ? (
-                    <Button asChild variant="outline" size="sm" className="gap-2">
-                      <a href={capitulo.archivo} download>
-                        <Download className="h-4 w-4" />
-                        Descargar PDF
-                      </a>
-                    </Button>
-                  ) : (
-                    <Button variant="outline" size="sm" disabled>
-                      Próximamente
-                    </Button>
-                  )}
+                  <div className="flex-shrink-0 flex flex-col items-end gap-2">
+                    {capitulo.esLibroCompleto ? (
+                      <Button 
+                        variant="default" 
+                        size="lg" 
+                        className="w-full md:w-auto bg-yellow-500 hover:bg-yellow-600 text-white font-bold py-2 px-6 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105"
+                      >
+                        Registrarse
+                      </Button>
+                    ) : capitulo.archivo ? (
+                      <Button 
+                        asChild 
+                        variant="outline" 
+                        size="sm" 
+                        className="w-full md:w-auto gap-2"
+                      >
+                        <Link href={capitulo.archivo} download>
+                          <Download className="h-4 w-4" />
+                          <span className="hidden sm:inline">Descargar</span>
+                          <span className="sm:hidden">PDF</span>
+                        </Link>
+                      </Button>
+                    ) : (
+                      <Button variant="outline" size="sm" disabled>
+                        Próximamente
+                      </Button>
+                    )}
+                  </div>
                 </div>
               </CardContent>
             </Card>
