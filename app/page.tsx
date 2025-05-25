@@ -17,6 +17,7 @@ interface ProjectType {
   link: string
   github: string
   tags: string[]
+  status: 'completed' | 'in-progress' // Estado del proyecto: completado o en progreso
 }
 
 const projects: ProjectType[] = [
@@ -29,7 +30,8 @@ const projects: ProjectType[] = [
     "date": "5 de Marzo 2025",
     "link": "https://btcer.fun",
     "github": "https://github.com/420btc/cndle",
-    "tags": ["React Native", "TypeScript", "JavaScript"]
+    "tags": ["React Native", "TypeScript", "JavaScript"],
+    "status": "completed"
   },
   {
     "id": 2,
@@ -40,7 +42,8 @@ const projects: ProjectType[] = [
     "date": "12 de Marzo 2025",
     "link": "https://meteomalaga.fun",
     "github": "https://github.com/420btc/meteomalaga",
-    "tags": ["React Native", "JavaScript", "TypeScript", "Supabase"]
+    "tags": ["React Native", "JavaScript", "TypeScript", "Supabase"],
+    "status": "completed"
   },
   {
     "id": 3,
@@ -51,7 +54,8 @@ const projects: ProjectType[] = [
     "date": "20 de Marzo 2025",
     "link": "https://carlosfpv.es",
     "github": "https://github.com/420btc/freirefpv",
-    "tags": ["Vue.js", "Python", "HTML", "EmailJS"]
+    "tags": ["Vue.js", "Python", "HTML", "EmailJS"],
+    "status": "completed"
   },
   {
     "id": 4,
@@ -62,7 +66,8 @@ const projects: ProjectType[] = [
     "date": "10 de Abril 2025",
     "link": "https://horizoncreative.es",
     "github": "https://github.com/420btc/horizoncreative",
-    "tags": ["Next.js", "TypeScript", "EmailJS", "JavaScript", "CSS"]
+    "tags": ["Next.js", "TypeScript", "EmailJS", "JavaScript", "CSS"],
+    "status": "completed"
   },
   {
     "id": 5,
@@ -73,7 +78,8 @@ const projects: ProjectType[] = [
     "date": "28 de Abril 2025",
     "link": "https://candlerush.es",
     "github": "https://github.com/420btc/CandleRush2",
-    "tags": ["Next.js", "Supabase", "TypeScript"]
+    "tags": ["Next.js", "Supabase", "TypeScript"],
+    "status": "in-progress"
   },
   {
     "id": 6,
@@ -84,7 +90,8 @@ const projects: ProjectType[] = [
     "date": "5 de Mayo 2025",
     "link": "https://notfoundink.art",
     "github": "https://github.com/420btc/notfoundink",
-    "tags": ["Next.js", "TypeScript", "Supabase", "Stripe", "Solana"]
+    "tags": ["Next.js", "TypeScript", "Supabase", "Stripe", "Solana"],
+    "status": "completed"
   },
   {
     "id": 7,
@@ -95,7 +102,8 @@ const projects: ProjectType[] = [
     "date": "12 de Mayo 2025",
     "link": "https://dreamsfreud.vercel.app/",
     "github": "https://github.com/420btc/DreamFreud",
-    "tags": ["Next.js", "TypeScript", "Supabase", "OpenAI", "JavaScript"]
+    "tags": ["Next.js", "TypeScript", "Supabase", "OpenAI", "JavaScript"],
+    "status": "completed"
   },
   {
     "id": 8,
@@ -106,7 +114,8 @@ const projects: ProjectType[] = [
     "date": "18 de Mayo 2025",
     "link": "https://tudiaen.vercel.app/game",
     "github": "https://github.com/420btc/Tud-aen",
-    "tags": ["Next.js", "TypeScript", "JavaScript", "OpenAI"]
+    "tags": ["Next.js", "TypeScript", "JavaScript", "OpenAI"],
+    "status": "in-progress"
   },
   {
     "id": 9,
@@ -117,7 +126,8 @@ const projects: ProjectType[] = [
     "date": "23 de Mayo 2025",
     "link": "https://bookcreatorr.netlify.app/",
     "github": "https://github.com/usuario/recipes",
-    "tags": ["Next.js", "TypeScript", "OpenAI", "PDF"]
+    "tags": ["Next.js", "TypeScript", "OpenAI", "PDF"],
+    "status": "completed"
   },
   {
     "id": 10,
@@ -128,7 +138,8 @@ const projects: ProjectType[] = [
     "date": "1 de Junio 2025",
     "link": "https://project-manager.com",
     "github": "https://github.com/usuario/project-mgmt",
-    "tags": ["Next.js", "TypeScript", "TensorFlow", "OpenCV"]
+    "tags": ["Next.js", "TypeScript", "TensorFlow", "OpenCV"],
+    "status": "in-progress"
   }
 ]
 export default function Portfolio() {
@@ -229,7 +240,56 @@ export default function Portfolio() {
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent dark:from-black/40" />
                   </div>
-                  <div className="p-6 sm:p-8 lg:p-12 flex-1 flex flex-col justify-center bg-card relative">
+                  <div className="p-4 sm:p-8 lg:p-12 flex-1 flex flex-col justify-center bg-card relative">
+                    {/* Sección móvil - Fecha y estado en la parte superior */}
+                    <div className="sm:hidden flex justify-between items-start mb-4">
+                      <div className="text-sm text-muted-foreground">
+                        {project.date}
+                      </div>
+                      <Badge 
+                        variant="outline" 
+                        className={`px-2 py-0.5 text-xs font-medium ${
+                          project.status === 'completed' 
+                            ? 'bg-green-100 text-green-800 dark:bg-green-900/30 dark:text-green-300 border-green-200 dark:border-green-800' 
+                            : 'bg-orange-100 text-orange-800 dark:bg-orange-900/30 dark:text-orange-300 border-orange-200 dark:border-orange-800'
+                        }`}
+                      >
+                        <div className="flex items-center">
+                          <span className={`w-2 h-2 rounded-full mr-1 ${
+                            project.status === 'completed' 
+                              ? 'bg-green-500' 
+                              : 'bg-orange-500'
+                          }`}></span>
+                          <span className="text-xs">
+                            {project.status === 'completed' ? 'Finalizado' : 'Trabajando'}
+                          </span>
+                        </div>
+                      </Badge>
+                    </div>
+                    
+                    {/* Sección escritorio - Fecha y estado en esquina superior derecha */}
+                    <div className="hidden sm:flex absolute top-6 right-6 flex-col items-end space-y-2">
+                      <div className="text-sm text-muted-foreground">
+                        {project.date}
+                      </div>
+                      <Badge 
+                        variant="outline" 
+                        className={`px-3 py-1 text-xs font-medium ${
+                          project.status === 'completed' 
+                            ? 'bg-green-100 text-green-800 dark:bg-green-900/30 dark:text-green-300 border-green-200 dark:border-green-800' 
+                            : 'bg-orange-100 text-orange-800 dark:bg-orange-900/30 dark:text-orange-300 border-orange-200 dark:border-orange-800'
+                        }`}
+                      >
+                        <div className="flex items-center">
+                          <span className={`w-2 h-2 rounded-full mr-2 ${
+                            project.status === 'completed' 
+                              ? 'bg-green-500' 
+                              : 'bg-orange-500'
+                          }`}></span>
+                          {project.status === 'completed' ? 'Finalizado' : 'Trabajando'}
+                        </div>
+                      </Badge>
+                    </div>
                     {project.id === 1 && (
                       // Ícono en la esquina inferior derecha del contenido - Candlerush
                       <div className="absolute bottom-0 right-0 pointer-events-none hidden md:block">
@@ -370,10 +430,11 @@ export default function Portfolio() {
                         </div>
                       </div>
                     )}
-                    <CardHeader className="p-0 mb-4 sm:mb-6 relative">
+                    <div className="flex-1 mt-2 sm:mt-0">
+                      <CardHeader className="p-0 mb-2 sm:mb-6 relative">
                       <div className="flex flex-col sm:flex-row sm:items-center gap-2 mb-2">
                         <div>
-                          <CardTitle className="text-2xl md:text-3xl text-card-foreground">
+                          <CardTitle className="text-2xl md:text-3xl text-card-foreground mt-2 sm:mt-0">
                             {project.title}
                           </CardTitle>
                           {project.subtitle && (
@@ -385,11 +446,6 @@ export default function Portfolio() {
                         <div className="sm:hidden text-xs text-muted-foreground">
                           {project.date}
                         </div>
-                      </div>
-                      <div className="hidden sm:block absolute top-0 right-0">
-                        <Badge variant="secondary" className="bg-secondary text-secondary-foreground">
-                          {project.date}
-                        </Badge>
                       </div>
                       <CardDescription className="text-base leading-relaxed text-muted-foreground">
                         {project.description}
@@ -420,7 +476,8 @@ export default function Portfolio() {
                     </CardContent>
                   </div>
                 </div>
-              </Card>
+              </div>
+            </Card>
             ))}
           </div>
         </div>
