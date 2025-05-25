@@ -143,7 +143,7 @@ export function AudioPlayer({ src, title }: AudioPlayerProps) {
           />
         </div>
       </div>
-      <p className="text-xs text-muted-foreground truncate">{title}</p>
+      <p className="text-xs text-muted-foreground truncate">Audiobook</p>
     </div>
   );
 }

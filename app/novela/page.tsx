@@ -121,7 +121,7 @@ export default function NovelaPage() {
               key={capitulo.id} 
               className={`hover:shadow-md transition-shadow min-h-[120px] flex flex-col justify-between h-full ${
                 capitulo.esLibroCompleto 
-                  ? 'border-2 border-yellow-400 dark:border-yellow-500 bg-gradient-to-br from-yellow-50 to-white dark:from-yellow-900/20 dark:to-gray-900 md:col-span-2'
+                  ? 'border-2 border-blue-300 dark:border-blue-400 bg-gradient-to-br from-blue-50 to-white dark:from-blue-900/20 dark:to-gray-900 md:col-span-2'
                   : ''
               }`}
             >
@@ -129,11 +129,11 @@ export default function NovelaPage() {
                 <div className="flex flex-col md:flex-row justify-between gap-4 w-full">
                   <div className="flex-1 min-w-0">
                     <div className="flex items-center gap-2">
-                      <h3 className={`text-lg font-bold ${capitulo.esLibroCompleto ? 'text-yellow-600 dark:text-yellow-400' : ''}`}>
+                      <h3 className={`text-lg font-bold ${capitulo.esLibroCompleto ? 'text-blue-600 dark:text-blue-400' : ''}`}>
                         {capitulo.titulo}
                       </h3>
                       {capitulo.esLibroCompleto && (
-                        <span className="bg-yellow-100 text-yellow-800 text-xs font-medium px-2.5 py-0.5 rounded-full dark:bg-yellow-900 dark:text-yellow-300">
+                        <span className="bg-blue-100 text-blue-800 text-xs font-medium px-2.5 py-0.5 rounded-full dark:bg-blue-900 dark:text-blue-300">
                           ¡Nuevo!
                         </span>
                       )}
@@ -160,13 +160,15 @@ export default function NovelaPage() {
                   </div>
                   <div className="flex-shrink-0 flex justify-end">
                     {capitulo.esLibroCompleto ? (
-                      <Button 
-                        variant="default" 
-                        size="lg" 
-                        className="w-full md:w-auto bg-yellow-500 hover:bg-yellow-600 text-white font-bold py-2 px-6 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105"
-                      >
-                        Registrarse
-                      </Button>
+                      <div className="w-full md:w-48 mt-2">
+                        <Button 
+                          variant="default" 
+                          size="lg" 
+                          className="w-full bg-blue-500 hover:bg-blue-600 text-white font-bold py-3 px-6 rounded-lg shadow-md hover:shadow-lg transition-all duration-200"
+                        >
+                          Registrarse
+                        </Button>
+                      </div>
                     ) : capitulo.archivo ? (
                       <Button 
                         asChild 
