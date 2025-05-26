@@ -132,9 +132,9 @@ const projects: ProjectType[] = [
   },
   {
     "id": 9,
-    "title": "Book Creator PDF",
-    "subtitle": "pdfbookcreator.es",
-    "description": "Aplicación web y móvil para crear libros PDF con contenido personalizado y en línea. Soporta PDFs ilimitados y permite su ordenación. Integración con OpenAI para obtener información sobre los libros que quieras en un chat integrado.",
+    "title": "Book Binder PDF",
+    "subtitle": "bookbinderpdf.es",
+    "description": "Aplicación web y móvil para ordenar linealmente PDFs con contenido personalizado y en línea. Soporta PDFs ilimitados y permite su ordenación. Integración con OpenAI para obtener información sobre los libros que quieras en un chat integrado.",
     "image": "/bookcreator.png",
     "date": "23 de Mayo 2025",
     "link": "https://bookcreatorr.netlify.app/",
