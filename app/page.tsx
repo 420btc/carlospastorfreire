@@ -127,7 +127,7 @@ const projects: ProjectType[] = [
     "link": "https://tudiaen.vercel.app/game",
     "github": "https://github.com/420btc/Tud-aen",
     "tags": ["Next.js", "TypeScript", "JavaScript", "OpenAI"],
-    "status": "in-progress",
+    "status": "completed",
     "category": "web"
   },
   {
@@ -153,7 +153,7 @@ const projects: ProjectType[] = [
     "link": "https://facedetection-wine.vercel.app/",
     "github": "https://github.com/420btc/FacetimeTracker",
     "tags": ["Next.js", "TypeScript", "TensorFlow", "OpenCV"],
-    "status": "in-progress",
+    "status": "completed",
     "category": "web"
   },
   {
